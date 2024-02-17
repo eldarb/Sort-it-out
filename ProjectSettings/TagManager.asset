@@ -7,6 +7,15 @@ TagManager:
   - RecyclingBin
   - Recycling
   - RecyclingHole
+  - GlassBin
+  - Glass
+  - GlassHole
+  - MetalBin
+  - MetalHole
+  - Metal
+  - Plastic
+  - PlasticBin
+  - PlasticHole
   layers:
   - Default
   - TransparentFX
