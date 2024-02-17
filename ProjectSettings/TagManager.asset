@@ -3,7 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - RecyclingBin
+  - Recycling
+  - RecyclingHole
+  - GlassBin
+  - Glass
+  - GlassHole
+  - MetalBin
+  - MetalHole
+  - Metal
+  - Plastic
+  - PlasticBin
+  - PlasticHole
   layers:
   - Default
   - TransparentFX
