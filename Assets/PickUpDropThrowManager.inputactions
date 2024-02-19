@@ -1,0 +1,54 @@
+{
+    "name": "PickUpDropThrowManager",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "391738e0-d3fd-47f6-907c-c87c11062033",
+            "actions": [
+                {
+                    "name": "PickUpDrop",
+                    "type": "Button",
+                    "id": "c1d48d68-3d1b-4e3f-873e-20716eb19f27",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Throw",
+                    "type": "Button",
+                    "id": "014ce66d-aa71-4059-b4f5-02d47d7556b9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a5895969-b4f6-4861-887d-00cc7d68c299",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PickUpDrop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c3c9eb7-a230-4910-a149-e2d214b8f67a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

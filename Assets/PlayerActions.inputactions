@@ -138,7 +138,7 @@
             "id": "021fb93b-aec7-4acd-bcab-13361b9da4d9",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "ExitBackToMenu",
                     "type": "Button",
                     "id": "dc222a89-5a2c-4740-ac48-8af1a60c0b07",
                     "expectedControlType": "Button",
@@ -151,11 +151,11 @@
                 {
                     "name": "",
                     "id": "0861ef44-18ec-44d8-9767-f7910261f35e",
-                    "path": "",
-                    "interactions": "",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "ExitBackToMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
