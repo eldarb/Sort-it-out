@@ -31,7 +31,6 @@ public class BinScript : MonoBehaviour
     /// </summary>
     void Start()
     {
-        // m_AudioSource.playOnAwake = false;
         m_Collider = GetComponent<BoxCollider>();
         m_AudioSource = GetComponent<AudioSource>();
     }
