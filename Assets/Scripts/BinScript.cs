@@ -31,6 +31,7 @@ public class BinScript : MonoBehaviour
     /// </summary>
     void Start()
     {
+        // m_AudioSource.playOnAwake = false;
         m_Collider = GetComponent<BoxCollider>();
         m_AudioSource = GetComponent<AudioSource>();
     }
@@ -52,6 +53,14 @@ public class BinScript : MonoBehaviour
             //Plays Success sound once. 
             m_AudioSource.PlayOneShot(m_SuccessSound);
             //TODO: point increment
+        }
+        // Prevents the fail sound to play due to binHole collision with Bins.
+        else if ((gameObject.CompareTag("RecyclingHole") && collision.gameObject.CompareTag("RecyclingBin"))
+        || (gameObject.CompareTag("GlassHole") && collision.gameObject.CompareTag("GlassBin"))
+        || (gameObject.CompareTag("MetalHole") && collision.gameObject.CompareTag("MetalBin"))
+        || (gameObject.CompareTag("PlasticHole") && collision.gameObject.CompareTag("PlasticBin")))
+        {
+            
         }
         else 
         {
