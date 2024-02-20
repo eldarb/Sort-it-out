@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 3679165776560597458}
   - component: {fileID: 5853127631850114289}
   - component: {fileID: 2457009524917683469}
-  - component: {fileID: 2687035182335223844}
   - component: {fileID: -8468480594991747060}
-  - component: {fileID: 3273099647119052725}
+  - component: {fileID: 4494983400638532410}
+  - component: {fileID: -2481079947613529631}
   m_Layer: 0
   m_Name: 'Player '
   m_TagString: Player
@@ -168,20 +168,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2687035182335223844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3369270438972729448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41527b9e46c45f34d91b37f496fa9d5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpHeight: 2
-  gravityValue: -9.81
 --- !u!114 &-8468480594991747060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standHeight: 2
   crouchHeight: 1
---- !u!114 &3273099647119052725
+--- !u!114 &4494983400638532410
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,9 +191,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 3369270438972729448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1c6ffcb502f2274fb623e0ee76a2745, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c0ea79f840dd6043aad84df6963e3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpHeight: 2
+  gravityValue: -9.81
   walkSpeed: 5
   sprintSpeed: 10
   turnSmoothTime: 0.1
+--- !u!114 &-2481079947613529631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3369270438972729448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a72b169a570f3b54baa7b5c757403e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
