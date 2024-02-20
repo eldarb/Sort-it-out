@@ -24,6 +24,10 @@ public class BinScript : MonoBehaviour
     /// Private BoxCollider variable that holds the bin's Audio Source.
     /// </summary>
     private AudioSource m_AudioSource;
+    /// <summary>
+    /// script that handles change in score
+    /// </summary>
+    private ScoreManager scoreManager;
 
     /// <summary>
     /// Start is called before the first frame update.
@@ -33,6 +37,7 @@ public class BinScript : MonoBehaviour
     {
         m_Collider = GetComponent<BoxCollider>();
         m_AudioSource = GetComponent<AudioSource>();
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     /// <summary>
@@ -52,6 +57,7 @@ public class BinScript : MonoBehaviour
             //Plays Success sound once. 
             m_AudioSource.PlayOneShot(m_SuccessSound);
             //TODO: point increment
+            scoreManager.scoreIncrement();
         }
         // Prevents the fail sound to play due to binHole collision with Bins.
         else if ((gameObject.CompareTag("RecyclingHole") && collision.gameObject.CompareTag("RecyclingBin"))
@@ -68,6 +74,7 @@ public class BinScript : MonoBehaviour
             //Spit the item back to the player or ground. TODO: Modify force speed (1000 for right now) and angle.
             collision.gameObject.GetComponent<Rigidbody>().AddForce((transform.forward * -1) * 1000);
             //TODO: point decrement
+            scoreManager.scoreDecrement();
         }
     }
 }
