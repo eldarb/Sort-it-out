@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5853127631850114289}
   - component: {fileID: 2457009524917683469}
   - component: {fileID: 2687035182335223844}
+  - component: {fileID: -8468480594991747060}
+  - component: {fileID: 3273099647119052725}
   m_Layer: 0
   m_Name: 'Player '
   m_TagString: Player
@@ -180,3 +182,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpHeight: 2
   gravityValue: -9.81
+--- !u!114 &-8468480594991747060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3369270438972729448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bffb606b3bb853b45bdfb2d58d64556b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standHeight: 2
+  crouchHeight: 1
+--- !u!114 &3273099647119052725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3369270438972729448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1c6ffcb502f2274fb623e0ee76a2745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 5
+  sprintSpeed: 10
+  turnSmoothTime: 0.1
