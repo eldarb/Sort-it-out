@@ -29,7 +29,10 @@ public class MenuFunctions : MonoBehaviour
     }
     public void MenuExit()
     {
+        // Quit out of built applications
         Application.Quit();
+        // Quit out of Unity Editor
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 
 
