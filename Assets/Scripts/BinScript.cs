@@ -56,8 +56,9 @@ public class BinScript : MonoBehaviour
             Destroy(collision.gameObject);
             //Plays Success sound once. 
             m_AudioSource.PlayOneShot(m_SuccessSound);
-            //TODO: point increment
-            scoreManager.scoreIncrement();
+            //Point increment
+            if(scoreManager != null) { scoreManager.scoreIncrement(); }
+            
         }
         // Prevents the fail sound to play due to binHole collision with Bins.
         else if ((gameObject.CompareTag("RecyclingHole") && collision.gameObject.CompareTag("RecyclingBin"))
@@ -73,8 +74,8 @@ public class BinScript : MonoBehaviour
             m_AudioSource.PlayOneShot(m_FailSound);
             //Spit the item back to the player or ground. TODO: Modify force speed (1000 for right now) and angle.
             collision.gameObject.GetComponent<Rigidbody>().AddForce((transform.forward * -1) * 1000);
-            //TODO: point decrement
-            scoreManager.scoreDecrement();
+            //Point decrement
+            if (scoreManager != null){ scoreManager.scoreDecrement(); }
         }
     }
 }
