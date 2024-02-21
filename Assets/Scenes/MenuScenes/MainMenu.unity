@@ -641,7 +641,7 @@ GameObject:
   - component: {fileID: 396416584}
   - component: {fileID: 396416583}
   m_Layer: 5
-  m_Name: Instructions
+  m_Name: Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2187,7 +2187,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: INSTRUCTIONS
+  m_text: CONTROLS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f9c6d935038f565c28bef6f59100979a, type: 2}
   m_sharedMaterial: {fileID: -8160569446081608429, guid: f9c6d935038f565c28bef6f59100979a, type: 2}
