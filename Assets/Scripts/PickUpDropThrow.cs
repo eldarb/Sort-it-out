@@ -7,7 +7,8 @@ using UnityEngine.InputSystem;
 
 public class PickUpDrop : MonoBehaviour
 {
-    public Camera cam;
+    PlayerManager playerManager;
+    GameObject cam;
     [SerializeField] private float dist = 2.5f;
     [SerializeField] private LayerMask mask;
     [SerializeField] private float throwForce;
@@ -15,40 +16,47 @@ public class PickUpDrop : MonoBehaviour
 
     GameObject gameobj;
 
-    private void OnEnable()
+    void Start()
     {
-        if(!TryGetComponent(out PlayerInput pInput)) return;
-
-        InputAction pickupAction = pInput.actions.FindAction("PickUpDrop");
-        InputAction throwAction = pInput.actions.FindAction("Throw");
-
-        if (pickupAction != null) pickupAction.performed += OnInteraction;
-        if (throwAction != null) throwAction.performed += OnThrow;
+        playerManager = GetComponent<PlayerManager>();
+        cam = Camera.main.gameObject;
     }
 
-    private void OnDisable()
+    void OnEnable()
     {
-        if(!TryGetComponent(out PlayerInput pInput)) return;
+        GameEventsManager.Instance.playerEvents.onPickUp += OnItemInteract;
+        GameEventsManager.Instance.playerEvents.onThrow += OnThrow;
+    }
 
-        InputAction pickupAction = pInput.actions.FindAction("PickUpDrop");
-        InputAction throwAction = pInput.actions.FindAction("Throw");
-
-        if (pickupAction != null) pickupAction.performed -= OnInteraction;
-        if (throwAction != null) pickupAction.performed -= OnThrow;
+    void OnDisable()
+    {
+        GameEventsManager.Instance.playerEvents.onPickUp -= OnItemInteract;
+        GameEventsManager.Instance.playerEvents.onThrow -= OnThrow;
     }
 
     void Update()
     {
-        if (isHolding) OnPickUp();
+        if (isHolding) HoldItem();
     }
 
-    public void OnInteraction(InputAction.CallbackContext cxt)
+    public void OnItemInteract()
     {
-        isHolding = !isHolding;
-        if(!isHolding && gameobj.TryGetComponent(out Rigidbody rb)) rb.isKinematic = false;
+        isHolding = playerManager.playerInputManager.isHolding;
+        Debug.Log(isHolding);
+        if (gameobj != null && gameobj.TryGetComponent(out Rigidbody rb))
+        {
+            if(isHolding)
+                rb.isKinematic = !isHolding;
+            else
+            {
+                rb.isKinematic = isHolding;
+                gameobj = null;
+            }
+        }
     }
-    
-    public void OnPickUp()
+
+
+    public void HoldItem()
     {
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hitInfo;
@@ -59,14 +67,14 @@ public class PickUpDrop : MonoBehaviour
                 || hitInfo.collider.tag == "Metal"
                 || hitInfo.collider.tag == "Glass"
                 || hitInfo.collider.tag == "Plastic")
-                {
-                    hitInfo.transform.position = cam.transform.position + cam.transform.forward; // place object in front of camera
-                    gameobj.GetComponent<Rigidbody>().isKinematic = true;
-                }
+            {
+                hitInfo.transform.position = cam.transform.position + cam.transform.forward; // place object in front of camera
+                gameobj.GetComponent<Rigidbody>().isKinematic = true;
+            }
         }
     }
 
-    public void OnThrow(InputAction.CallbackContext cxt)
+    public void OnThrow()
     {
         if (gameobj != null && gameobj.TryGetComponent(out Rigidbody rb))
         {
