@@ -144,11 +144,11 @@ public class PlayerInputManager : MonoBehaviour
         SetLook(context.ReadValue<Vector2>());
     }
 
-    public void OnJumpStart(InputAction.CallbackContext context)
+    void OnJumpStart(InputAction.CallbackContext context)
     {
         SetJump(context.ReadValueAsButton());
     }
-    public void OnJumpEnd(InputAction.CallbackContext context)
+    void OnJumpEnd(InputAction.CallbackContext context)
     {
         SetJump(context.ReadValueAsButton());
     }
