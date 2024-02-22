@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     public PlayerJump playerJump;
     public PlayerMovement playerMovement;
     public PlayerGrounded playerGrounded;
+    public PlayerLadderMovement playerLadderMovement;
 
     public CharacterController characterController;
 
@@ -27,6 +28,8 @@ public class PlayerManager : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         playerGrounded = GetComponent<PlayerGrounded>();
 
+        playerLadderMovement = GetComponent<PlayerLadderMovement>();
+
         characterController = GetComponent<CharacterController>();
     }
 
@@ -35,6 +38,7 @@ public class PlayerManager : MonoBehaviour
     {
         playerGrounded.GroundedCheck();
         playerMovement.Move();
+        movement = playerLadderMovement.HandleLadderMovement(movement);
         characterController.Move(movement);
     }
 }
