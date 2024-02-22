@@ -1,87 +1,69 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class PickUpDrop : MonoBehaviour
+public class PickUpDropThrow : MonoBehaviour
 {
-    PlayerManager playerManager;
     GameObject cam;
     [SerializeField] private float dist = 2.5f;
     [SerializeField] private LayerMask mask;
-    [SerializeField] private float throwForce;
-    bool isHolding = false;
-
-    GameObject gameobj;
-
+    [SerializeField] private float throwForce = 25;
+    PlayerInventory inventory;
+    GameObject heldObject;
     void Start()
     {
-        playerManager = GetComponent<PlayerManager>();
         cam = Camera.main.gameObject;
+        inventory = GetComponent<PlayerInventory>();
     }
 
     void OnEnable()
     {
-        GameEventsManager.Instance.playerEvents.onPickUp += OnItemInteract;
+        GameEventsManager.Instance.playerEvents.onPickUp += OnPickUp;
         GameEventsManager.Instance.playerEvents.onThrow += OnThrow;
     }
 
     void OnDisable()
     {
-        GameEventsManager.Instance.playerEvents.onPickUp -= OnItemInteract;
+        GameEventsManager.Instance.playerEvents.onPickUp -= OnPickUp;
         GameEventsManager.Instance.playerEvents.onThrow -= OnThrow;
     }
 
-    void Update()
-    {
-        if (isHolding) HoldItem();
-    }
-
-    public void OnItemInteract()
-    {
-        isHolding = playerManager.playerInputManager.isHolding;
-        Debug.Log(isHolding);
-        if (gameobj != null && gameobj.TryGetComponent(out Rigidbody rb))
-        {
-            if(isHolding)
-                rb.isKinematic = !isHolding;
-            else
-            {
-                rb.isKinematic = isHolding;
-                gameobj = null;
-            }
-        }
-    }
-
-
-    public void HoldItem()
+    public void OnPickUp()
     {
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo, dist, mask))
         {
-            gameobj = hitInfo.collider.gameObject;
-            if (hitInfo.collider.tag == "Recycling"
-                || hitInfo.collider.tag == "Metal"
-                || hitInfo.collider.tag == "Glass"
-                || hitInfo.collider.tag == "Plastic")
+            GameObject gameobj = hitInfo.collider.gameObject;
+            if (gameobj.CompareTag("Recycling")
+                || gameobj.CompareTag("Metal")
+                || gameobj.CompareTag("Glass")
+                || gameobj.CompareTag("Plastic"))
             {
-                hitInfo.transform.position = cam.transform.position + cam.transform.forward; // place object in front of camera
-                gameobj.GetComponent<Rigidbody>().isKinematic = true;
+                gameobj.transform.position = cam.transform.position + cam.transform.forward;
+                gameobj.SetActive(false);
+                inventory.OnCollect(gameobj);
             }
         }
     }
 
     public void OnThrow()
     {
-        if (gameobj != null && gameobj.TryGetComponent(out Rigidbody rb))
+        if (heldObject == null)
         {
-            rb.isKinematic = false;
-            rb.AddForce(cam.transform.forward * throwForce, ForceMode.Impulse);
-            gameobj = null;
-            isHolding = false;
+            heldObject = inventory.OnRelease();
+            if (heldObject != null)
+            {
+                heldObject.transform.position = cam.transform.position + cam.transform.forward;
+                heldObject.SetActive(true);
+                Rigidbody rb = heldObject.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.isKinematic = false;
+                    rb.AddForce(cam.transform.forward * throwForce, ForceMode.Impulse);
+                }
+            }
         }
     }
 }
+
