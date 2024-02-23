@@ -1,79 +1,71 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class PickUpDrop : MonoBehaviour
+public class PickUpDropThrow : MonoBehaviour
 {
-    public Camera cam;
+    GameObject cam;
     [SerializeField] private float dist = 2.5f;
     [SerializeField] private LayerMask mask;
-    [SerializeField] private float throwForce;
-    bool isHolding = false;
-
-    GameObject gameobj;
-
-    private void OnEnable()
+    [SerializeField] private float throwForce = 10;
+    PlayerInventory inventory;
+    void Start()
     {
-        if(!TryGetComponent(out PlayerInput pInput)) return;
-
-        InputAction pickupAction = pInput.actions.FindAction("PickUpDrop");
-        InputAction throwAction = pInput.actions.FindAction("Throw");
-
-        if (pickupAction != null) pickupAction.performed += OnInteraction;
-        if (throwAction != null) throwAction.performed += OnThrow;
+        cam = Camera.main.gameObject;
+        inventory = GetComponent<PlayerInventory>();
     }
 
-    private void OnDisable()
-    {
-        if(!TryGetComponent(out PlayerInput pInput)) return;
+    // void OnEnable()
+    // {
+    //     GameEventsManager.Instance.playerEvents.onPickUp += OnPickUp;
+    //     //GameEventsManager.Instance.playerEvents.onThrow += OnThrow;
+    // }
 
-        InputAction pickupAction = pInput.actions.FindAction("PickUpDrop");
-        InputAction throwAction = pInput.actions.FindAction("Throw");
+    // void OnDisable()
+    // {
+    //     GameEventsManager.Instance.playerEvents.onPickUp -= OnPickUp;
+    //     //GameEventsManager.Instance.playerEvents.onThrow -= OnThrow;
+    // }
 
-        if (pickupAction != null) pickupAction.performed -= OnInteraction;
-        if (throwAction != null) pickupAction.performed -= OnThrow;
-    }
-
-    void Update()
-    {
-        if (isHolding) OnPickUp();
-    }
-
-    public void OnInteraction(InputAction.CallbackContext cxt)
-    {
-        isHolding = !isHolding;
-        if(!isHolding && gameobj.TryGetComponent(out Rigidbody rb)) rb.isKinematic = false;
-    }
-    
     public void OnPickUp()
     {
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo, dist, mask))
         {
-            gameobj = hitInfo.collider.gameObject;
-            if (hitInfo.collider.tag == "Recycling"
-                || hitInfo.collider.tag == "Metal"
-                || hitInfo.collider.tag == "Glass"
-                || hitInfo.collider.tag == "Plastic")
+            Debug.Log("Raycast made a Hit");
+            GameObject gameobj = hitInfo.collider.gameObject;
+            if (gameobj.CompareTag("Recycling")
+                || gameobj.CompareTag("Metal")
+                || gameobj.CompareTag("Glass")
+                || gameobj.CompareTag("Plastic"))
+            {
+                gameobj.transform.position = cam.transform.position + cam.transform.forward;
+                if (!inventory.CheckFull())
                 {
-                    hitInfo.transform.position = cam.transform.position + cam.transform.forward; // place object in front of camera
-                    gameobj.GetComponent<Rigidbody>().isKinematic = true;
+                    Debug.Log("Inventory is not full");
+                    gameobj.SetActive(false);
+                    inventory.OnCollect(gameobj);
                 }
+            }
         }
     }
 
-    public void OnThrow(InputAction.CallbackContext cxt)
+    public void OnThrow()
     {
-        if (gameobj != null && gameobj.TryGetComponent(out Rigidbody rb))
+        Debug.Log("Throw called");
+        GameObject heldObject = inventory.OnRelease();
+        if (heldObject != null)
         {
-            rb.isKinematic = false;
-            rb.AddForce(cam.transform.forward * throwForce, ForceMode.Impulse);
-            gameobj = null;
-            isHolding = false;
+            heldObject.transform.position = cam.transform.position + cam.transform.forward;
+            heldObject.SetActive(true);
+            Rigidbody rb = heldObject.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.isKinematic = false;
+                rb.AddForce(cam.transform.forward * throwForce, ForceMode.Impulse);
+                Debug.Log("Object Thrown");
+            }
         }
     }
 }
