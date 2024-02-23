@@ -16,6 +16,10 @@ TagManager:
   - Plastic
   - PlasticBin
   - PlasticHole
+  - CinemachineTarget
+  - CreditsPageCanvas
+  - CreditsText
+  - CreditsThanksText
   layers:
   - Default
   - TransparentFX
@@ -24,7 +28,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - Player
   - 
   - 
   - 

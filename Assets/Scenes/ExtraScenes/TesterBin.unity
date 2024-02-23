@@ -6299,8 +6299,13 @@ MonoBehaviour:
 
     Match the colors to the right bin!!'
   m_isRightToLeft: 0
+<<<<<<< HEAD
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+=======
+  m_fontAsset: {fileID: 11400000, guid: f9c6d935038f565c28bef6f59100979a, type: 2}
+  m_sharedMaterial: {fileID: -8160569446081608429, guid: f9c6d935038f565c28bef6f59100979a, type: 2}
+>>>>>>> main
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6389,7 +6394,11 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+<<<<<<< HEAD
   - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+=======
+  - {fileID: -8160569446081608429, guid: f9c6d935038f565c28bef6f59100979a, type: 2}
+>>>>>>> main
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6854,6 +6863,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8d2778e92c63804092e9224a8bbff62, type: 3}
+<<<<<<< HEAD
 --- !u!1001 &5218371070760455248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6951,6 +6961,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e52194d80936f08448d37062fdb48083, type: 3}
+=======
+>>>>>>> main
 --- !u!1001 &7965489573820237050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7092,5 +7104,8 @@ SceneRoots:
   - {fileID: 1962604738}
   - {fileID: 1322424550}
   - {fileID: 187236427}
+<<<<<<< HEAD
   - {fileID: 5218371070760455248}
   - {fileID: 182782451}
+=======
+>>>>>>> main
