@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 876927702075947039}
   - component: {fileID: 3448563320777271534}
   - component: {fileID: 9181343536895217663}
-  - component: {fileID: 2124110581067078950}
+  - component: {fileID: 7946450171584890622}
   m_Layer: 7
   m_Name: 'Player '
   m_TagString: Player
@@ -310,8 +310,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cinemachineTarget: {fileID: 4345207327566844405}
-  verticalSensetivity: 1
-  horizontalSensetivity: 1
+  verticalSensetivity: 16
+  horizontalSensetivity: 16
   MaxAngle: 75
   MinAngle: -75
 --- !u!114 &3057741708679542612
@@ -395,7 +395,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   throwForce: 10
---- !u!114 &2124110581067078950
+--- !u!114 &7946450171584890622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -404,10 +404,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3369270438972729448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16700636043481d4389425f4e2bc9ccb, type: 3}
+  m_Script: {fileID: 11500000, guid: 399b1cc814bc4c644898af09b7cd3593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  climbingLadderSpeed: 0
+  size: 5
 --- !u!1 &4345207327566844405
 GameObject:
   m_ObjectHideFlags: 0

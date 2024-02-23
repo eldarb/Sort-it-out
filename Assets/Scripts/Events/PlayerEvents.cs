@@ -54,4 +54,23 @@ public class PlayerEvents
             onThrow();
         }
     }
+
+    public event Action<GameObject> onCollect;
+    public void Collect(GameObject obj)
+    {
+        if (onCollect != null)
+        {
+            onCollect(obj);
+        }
+    }
+    
+    public event Func<GameObject> onRelease;
+    public GameObject Release()
+    {
+        if (onRelease != null)
+        {
+            return onRelease();
+        }
+        return null;
+    }
 }
