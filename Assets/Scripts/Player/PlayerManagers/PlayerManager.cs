@@ -26,7 +26,6 @@ public class PlayerManager : MonoBehaviour
         playerJump = GetComponent<PlayerJump>();
         playerMovement = GetComponent<PlayerMovement>();
         playerGrounded = GetComponent<PlayerGrounded>();
-
         characterController = GetComponent<CharacterController>();
     }
 
