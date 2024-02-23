@@ -69,12 +69,12 @@ public class PlayerInputManager : MonoBehaviour
             sprintAction.performed += OnSprintStart;
             sprintAction.canceled += OnSprintEnd;
         }
-        InputAction holdAction = input.actions.FindAction("PickUpDrop");
+        InputAction holdAction = input.actions.FindAction("PickUp");
         if (holdAction != null)
         {
-            holdAction.started += OnPickUpDropStart;
-            holdAction.performed += OnPickUpDropStart;
-            holdAction.canceled += OnPickUpDropEnd;
+            holdAction.started += OnPickUpStart;
+            holdAction.performed += OnPickUpStart;
+            holdAction.canceled += OnPickUpEnd;
         }
         InputAction throwAction = input.actions.FindAction("Throw");
         if (throwAction != null)
@@ -118,12 +118,12 @@ public class PlayerInputManager : MonoBehaviour
             sprintAction.performed -= OnSprintStart;
             sprintAction.canceled -= OnSprintEnd;
         }
-        InputAction holdAction = input.actions.FindAction("PickUpDrop");
+        InputAction holdAction = input.actions.FindAction("PickUp");
         if (holdAction != null)
         {
-            holdAction.started -= OnPickUpDropStart;
-            holdAction.performed -= OnPickUpDropStart;
-            holdAction.canceled -= OnPickUpDropEnd;
+            holdAction.started -= OnPickUpStart;
+            holdAction.performed -= OnPickUpStart;
+            holdAction.canceled -= OnPickUpEnd;
 
         }
         InputAction throwAction = input.actions.FindAction("Throw");
@@ -172,12 +172,12 @@ public class PlayerInputManager : MonoBehaviour
         SetCrouch(context.ReadValueAsButton());
         GameEventsManager.Instance.playerEvents.CrouchEnd();
     }
-    void OnPickUpDropStart(InputAction.CallbackContext context)
+    void OnPickUpStart(InputAction.CallbackContext context)
     {
         SetHold(context.ReadValueAsButton());
         GameEventsManager.Instance.playerEvents.PickUp();
     }
-    void OnPickUpDropEnd(InputAction.CallbackContext context)
+    void OnPickUpEnd(InputAction.CallbackContext context)
     {
         SetHold(context.ReadValueAsButton());
         GameEventsManager.Instance.playerEvents.PickUp();

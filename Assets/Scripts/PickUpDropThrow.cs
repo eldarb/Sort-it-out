@@ -15,17 +15,17 @@ public class PickUpDropThrow : MonoBehaviour
         inventory = GetComponent<PlayerInventory>();
     }
 
-    void OnEnable()
-    {
-        GameEventsManager.Instance.playerEvents.onPickUp += OnPickUp;
-        GameEventsManager.Instance.playerEvents.onThrow += OnThrow;
-    }
+    // void OnEnable()
+    // {
+    //     GameEventsManager.Instance.playerEvents.onPickUp += OnPickUp;
+    //     //GameEventsManager.Instance.playerEvents.onThrow += OnThrow;
+    // }
 
-    void OnDisable()
-    {
-        GameEventsManager.Instance.playerEvents.onPickUp -= OnPickUp;
-        GameEventsManager.Instance.playerEvents.onThrow -= OnThrow;
-    }
+    // void OnDisable()
+    // {
+    //     GameEventsManager.Instance.playerEvents.onPickUp -= OnPickUp;
+    //     //GameEventsManager.Instance.playerEvents.onThrow -= OnThrow;
+    // }
 
     public void OnPickUp()
     {
@@ -53,7 +53,7 @@ public class PickUpDropThrow : MonoBehaviour
 
     public void OnThrow()
     {
-        Debug.Log("Object thrown");
+        Debug.Log("Throw called");
         GameObject heldObject = inventory.OnRelease();
         if (heldObject != null)
         {
@@ -64,6 +64,7 @@ public class PickUpDropThrow : MonoBehaviour
             {
                 rb.isKinematic = false;
                 rb.AddForce(cam.transform.forward * throwForce, ForceMode.Impulse);
+                Debug.Log("Object Thrown");
             }
         }
     }

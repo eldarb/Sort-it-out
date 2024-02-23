@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "PickUpDrop",
+                    "name": "PickUp",
                     "type": "Button",
                     "id": "29a66dcf-15b0-4b86-915b-c5eb02cf21cb",
                     "expectedControlType": "Button",
@@ -187,7 +187,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PickUpDrop",
+                    "action": "PickUp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

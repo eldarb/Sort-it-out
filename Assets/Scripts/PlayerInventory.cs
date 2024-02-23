@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     private Stack<GameObject> Inventory;
-    public int size = 4;
+    public int size = 5;
 
     private void Awake()
     {
