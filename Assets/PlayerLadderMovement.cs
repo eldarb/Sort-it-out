@@ -62,10 +62,12 @@ public class PlayerLadderMovement : MonoBehaviour
     /// <returns></returns>
     public Vector3 HandleLadderMovement(Vector3 movement)
     {
+        //Debug.Log(movement.x);
         if (climbingLadder)
         {
+            Debug.Log("playerInputManager.move:" + playerManager.playerInputManager.move);
             // going down
-            if (movement.x < 0)
+            if (playerManager.playerInputManager.move.y < 0)
             {
                 movement.y = -1 * climbingLadderSpeed * Time.deltaTime;
             }
@@ -75,7 +77,7 @@ public class PlayerLadderMovement : MonoBehaviour
             //    movement.x = 0;
             //}
             // going up
-            else if (playerManager.movement.x > 0) 
+            else if (playerManager.playerInputManager.move.y > 0) 
             {
                 movement.y = climbingLadderSpeed * Time.deltaTime; 
             }
