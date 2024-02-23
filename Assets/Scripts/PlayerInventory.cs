@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public Stack<GameObject> Inventory;
+    private Stack<GameObject> Inventory;
     public int size = 4;
 
-    void Awake()
+    private void Awake()
     {
         Inventory = new Stack<GameObject>();
     }
@@ -26,13 +26,27 @@ public class PlayerInventory : MonoBehaviour
 
     public void OnCollect(GameObject obj)
     {
-        if (Inventory.Count < size) Inventory.Push(obj);
+        if (Inventory.Count < size)
+        {
+            Inventory.Push(obj);
+            Debug.Log("Item collected");
+        }
     }
 
     public GameObject OnRelease()
     {
-        if (Inventory.Count == 0) return null;
-        return Inventory.Pop();
+        if (Inventory.Count > 0) 
+        {
+            Debug.Log("Item released");
+            return Inventory.Pop();
+        }
+        return null;
+        
     }
-    
+
+    public bool CheckFull()
+    {
+        if (Inventory.Count < size) return false;
+        return true;
+    }
 }
