@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Playerjump : MonoBehaviour
 { 
-  public float jumpHeight = 2f;
+    public float jumpHeight = 2f;
     private CharacterController characterController;
     private Vector3 playerVelocity;
     private bool isGrounded;
@@ -13,10 +13,23 @@ public class Playerjump : MonoBehaviour
     private PlayerInput playerInput;
     private InputAction jumpAction;
 
+    /// <summary>
+    /// private AudioClip variable to hold the footsteps SFX.
+    /// </summary>
+    public AudioClip m_JumpingSFX;
+    /// <summary>
+    /// private AudioSource variable to hold the Player's AudioSource.
+    /// </summary>
+    private AudioSource m_AudioSource;
+
+    /// <summary>
+    /// Gets and sets a few variables.
+    /// </summary>
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
+        m_AudioSource = GetComponent<AudioSource>();
         jumpAction = playerInput.actions["Jump"]; 
     }
 
@@ -46,6 +59,11 @@ public class Playerjump : MonoBehaviour
     {
         if (isGrounded)
         {
+            // if(m_AudioSource.isPlaying)
+            // {
+            //     m_AudioSource.Stop();
+            // }
+            m_AudioSource.PlayOneShot(m_JumpingSFX);
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
     }

@@ -12,15 +12,33 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float crouchSpeed;
     public float currentSpeed;
 
+    /// <summary>
+    /// private AudioClip variable to hold the footsteps SFX.
+    /// </summary>
+    public AudioClip m_FootStepsSFX;
+    /// <summary>
+    /// private AudioSource variable to hold the Player's AudioSource.
+    /// </summary>
+    private AudioSource m_AudioSource;
+    /// <summary>
+    /// private boolean variable to check if audio is currently playing.
+    /// </summary>
+    private bool isAudioOn;
+
     public float standHeight = 2.0f;
     private float standCenter = 0.0f;
     public float crouchHeight = 1.0f;
     private float crouchCenter = -0.5f;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Gets and sets a few variables.
+    /// </summary>
     void Awake()
     {
         playerManager = GetComponent<PlayerManager>();
+        m_AudioSource = GetComponent<AudioSource>();
+        m_AudioSource.clip = m_FootStepsSFX;
+        isAudioOn = false;
     }
 
     private void Start()
@@ -45,6 +63,27 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move()
     {
+        //If the player moves and audio isn't playing, play the footsteps SFX.
+        if(Input.GetKey(KeyCode.W)
+        || Input.GetKey(KeyCode.A)
+        || Input.GetKey(KeyCode.S)
+        || Input.GetKey(KeyCode.D))
+        {
+            if(!isAudioOn)
+            {
+                m_AudioSource.Play();
+                isAudioOn = true;
+            }
+        }
+        //Player has stop moving so stop playing the footsteps SFX.
+        else 
+        {
+            if(isAudioOn)
+            {
+                m_AudioSource.Stop();
+                isAudioOn = false;
+            }
+        }
         moveDir = (transform.forward * playerManager.playerInputManager.move.y + transform.right * playerManager.playerInputManager.move.x) * currentSpeed * Time.deltaTime;
         playerManager.movement = new Vector3(moveDir.x, playerManager.movement.y, moveDir.z);
     }
@@ -81,6 +120,4 @@ public class PlayerMovement : MonoBehaviour
         SetSpeed();
         Crouching();
     }
-
-    
 }

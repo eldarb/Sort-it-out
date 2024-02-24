@@ -3,7 +3,8 @@ guid: 41527b9e46c45f34d91b37f496fa9d5a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_JumpingSFX: {fileID: 8300000, guid: a163320f8942d3748ba069475a00d6eb, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
