@@ -294,6 +294,7 @@ MonoBehaviour:
   playerJump: {fileID: 0}
   playerMovement: {fileID: 0}
   playerGrounded: {fileID: 0}
+  playerLadderMovement: {fileID: 0}
   characterController: {fileID: 0}
   movement: {x: 0, y: 0, z: 0}
 --- !u!114 &8033989257481725245
