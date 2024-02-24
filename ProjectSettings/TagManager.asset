@@ -20,6 +20,7 @@ TagManager:
   - CreditsPageCanvas
   - CreditsText
   - CreditsThanksText
+  - ItemCountText
   layers:
   - Default
   - TransparentFX
