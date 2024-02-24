@@ -21,6 +21,7 @@ TagManager:
   - CreditsText
   - CreditsThanksText
   - ItemCountText
+  - Ladder
   layers:
   - Default
   - TransparentFX
