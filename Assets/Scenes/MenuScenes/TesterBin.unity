@@ -4176,7 +4176,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322138762}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
@@ -6363,12 +6363,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 12.348424, w: 2.7196074}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1962604737}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!23 &1962604737
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6922,6 +6922,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 135804292762566167, guid: 55f7ff07be6ca8c43b363eb175e7150c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 478874205227433387, guid: 55f7ff07be6ca8c43b363eb175e7150c, type: 3}
       propertyPath: m_Name
       value: Canvas
