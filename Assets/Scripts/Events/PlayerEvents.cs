@@ -8,6 +8,7 @@ public class PlayerEvents
     public event Action onSprintStart;
     public void SprintStart()
     {
+        Debug.Log(onSprintStart);
         if(onSprintStart != null)
         {
             onSprintStart();

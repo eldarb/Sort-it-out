@@ -19,6 +19,12 @@ public class PlayerInventory : MonoBehaviour
         m_TextMeshPro = GameObject.Find("ItemCountText").GetComponent<TextMeshPro>();
     }
 
+    private void Start()
+    {
+        GameEventsManager.Instance.playerEvents.onCollect += OnCollect;
+        GameEventsManager.Instance.playerEvents.onRelease += OnRelease;
+    }
+
     void OnEnable()
     {
         GameEventsManager.Instance.playerEvents.onCollect += OnCollect;
