@@ -290,7 +290,6 @@ GameObject:
   - component: {fileID: 9083061808056539559}
   - component: {fileID: 1908406198623373829}
   - component: {fileID: 896443704359570156}
-  - component: {fileID: 2950224435580552014}
   - component: {fileID: 964173237078914339}
   m_Layer: 7
   m_Name: 'Player '
@@ -707,21 +706,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2950224435580552014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3369524319881671948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41527b9e46c45f34d91b37f496fa9d5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpHeight: 2
-  gravityValue: -9.81
-  m_JumpingSFX: {fileID: 8300000, guid: a163320f8942d3748ba069475a00d6eb, type: 3}
 --- !u!114 &964173237078914339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,12 +915,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: -8.939107, z: -42.796757, w: 2.6635966}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 4729816101377437105}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 4729816101377437105}
+  m_maskType: 0
 --- !u!1 &8178486790148219796
 GameObject:
   m_ObjectHideFlags: 0
