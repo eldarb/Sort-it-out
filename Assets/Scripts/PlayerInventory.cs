@@ -27,6 +27,7 @@ public class PlayerInventory : MonoBehaviour
 
     void OnEnable()
     {
+        if(GameEventsManager.Instance == null) { return; }
         GameEventsManager.Instance.playerEvents.onCollect += OnCollect;
         GameEventsManager.Instance.playerEvents.onRelease += OnRelease;
     }
