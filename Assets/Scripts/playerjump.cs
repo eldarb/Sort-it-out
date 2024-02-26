@@ -63,7 +63,7 @@ public class Playerjump : MonoBehaviour
             // {
             //     m_AudioSource.Stop();
             // }
-            m_AudioSource.PlayOneShot(m_JumpingSFX);
+            // m_AudioSource.PlayOneShot(m_JumpingSFX);
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
     }
