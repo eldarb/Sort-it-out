@@ -95841,6 +95841,10 @@ PrefabInstance:
       propertyPath: jumpHeight
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4586775444506843006, guid: 6088bff4127c8960296c5892eeb02e97, type: 3}
+      propertyPath: m_JumpingSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 162a3c62bc337384da95db3b371492d4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
