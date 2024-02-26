@@ -194,8 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c833704288bd4b4aead3e06e34562c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SuccessSound: {fileID: 8300000, guid: 79bc7a88c65737daeb7195c7f2f6551d, type: 3}
-  m_FailSound: {fileID: 8300000, guid: e57b08d81b6d44300bc0e912c86b5100, type: 3}
+  m_SuccessSound: {fileID: 8300000, guid: 47d5501caf1aba08ba9ee83de8a44b02, type: 3}
+  m_FailSound: {fileID: 8300000, guid: f5edfce05a322f0daae758874205841b, type: 3}
 --- !u!65 &1842573200168488684
 BoxCollider:
   m_ObjectHideFlags: 0
