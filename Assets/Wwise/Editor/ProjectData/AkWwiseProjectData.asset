@@ -69,6 +69,33 @@ MonoBehaviour:
         guid: 1825713ea05e3b45976e7f29cb22dff7
       Path: Master-Mixer Hierarchy\Default Work Unit\New Master Bus
   BankWwu:
+  - PhysicalPath: SoundBanks\Bank_SortItOut.wwu
+    PathAndIcons:
+    - ElementName: SoundBanks
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Bank_SortItOut
+      ObjectType: 12
+      guid: 61728cac7e826946b59ec8d65dc9bed1
+    ParentPath: SoundBanks\Bank_SortItOut
+    guid: 61728cac7e826946b59ec8d65dc9bed1
+    GuidInternal: 
+    m_lastTime: -8584925384609642682
+    List:
+    - name: Main_bank
+      guid: bb779117b90d9a46a31c7c2469ad1282
+      id: 3989171651
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Bank_SortItOut
+        ObjectType: 12
+        guid: 61728cac7e826946b59ec8d65dc9bed1
+      - ElementName: Main_bank
+        ObjectType: 7
+        guid: bb779117b90d9a46a31c7c2469ad1282
+      Path: SoundBanks\Bank_SortItOut\Main_bank
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: SoundBanks
@@ -80,7 +107,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 41e8dfab705edd4f822f503e9ed01f6f
     GuidInternal: 
-    m_lastTime: -8584925939861751889
+    m_lastTime: -8584925384609703878
     List: []
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
@@ -94,8 +121,76 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 40e412b9eeb8e24d9428f2c9e2d2530f
     GuidInternal: 
-    m_lastTime: -8584925939861520912
-    List: []
+    m_lastTime: -8584925384942237254
+    List:
+    - name: Footstep
+      guid: edaf0928729ef049b6985bb97d729a20
+      id: 1866025847
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 40e412b9eeb8e24d9428f2c9e2d2530f
+      - ElementName: Footstep
+        ObjectType: 3
+        guid: edaf0928729ef049b6985bb97d729a20
+      Path: Events\Default Work Unit\Footstep
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Item_Deposit
+      guid: bbfd5a2b52f92b4aba6a8234434322a7
+      id: 1777413591
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 40e412b9eeb8e24d9428f2c9e2d2530f
+      - ElementName: Item_Deposit
+        ObjectType: 3
+        guid: bbfd5a2b52f92b4aba6a8234434322a7
+      Path: Events\Default Work Unit\Item_Deposit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Item_Pickup
+      guid: 43e05cbaae334e46bb97e7cd934cb12f
+      id: 566396871
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 40e412b9eeb8e24d9428f2c9e2d2530f
+      - ElementName: Item_Pickup
+        ObjectType: 3
+        guid: 43e05cbaae334e46bb97e7cd934cb12f
+      Path: Events\Default Work Unit\Item_Pickup
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Jump
+      guid: d57940390df1584ab68bde4c3026bbe5
+      id: 3833651337
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 40e412b9eeb8e24d9428f2c9e2d2530f
+      - ElementName: Jump
+        ObjectType: 3
+        guid: d57940390df1584ab68bde4c3026bbe5
+      Path: Events\Default Work Unit\Jump
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -136,8 +231,156 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: f3526a42261b4c4591c0f880900c5f79
     GuidInternal: 
-    m_lastTime: -8584925939861441752
-    List: []
+    m_lastTime: -8584925384942171435
+    List:
+    - name: Garbage_Feedback
+      guid: be3b6279ce2f3f499ad78b39eff526e5
+      id: 2395097276
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f3526a42261b4c4591c0f880900c5f79
+      - ElementName: Garbage_Feedback
+        ObjectType: 11
+        guid: be3b6279ce2f3f499ad78b39eff526e5
+      Path: Switches\Default Work Unit\Garbage_Feedback
+      values:
+      - name: Negative
+        guid: f0328cefd78e0c45b4d5e8a43dae585b
+        id: 4219547688
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: f3526a42261b4c4591c0f880900c5f79
+        - ElementName: Garbage_Feedback
+          ObjectType: 11
+          guid: be3b6279ce2f3f499ad78b39eff526e5
+        - ElementName: Negative
+          ObjectType: 10
+          guid: f0328cefd78e0c45b4d5e8a43dae585b
+      - name: Positive
+        guid: fcd129cdb90a4545944cf1e1d81d36b9
+        id: 1192865152
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: f3526a42261b4c4591c0f880900c5f79
+        - ElementName: Garbage_Feedback
+          ObjectType: 11
+          guid: be3b6279ce2f3f499ad78b39eff526e5
+        - ElementName: Positive
+          ObjectType: 10
+          guid: fcd129cdb90a4545944cf1e1d81d36b9
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Garbage_Material
+      guid: 1694711b24bc584dbf116440f8e208cd
+      id: 942024082
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f3526a42261b4c4591c0f880900c5f79
+      - ElementName: Garbage_Material
+        ObjectType: 11
+        guid: 1694711b24bc584dbf116440f8e208cd
+      Path: Switches\Default Work Unit\Garbage_Material
+      values:
+      - name: Cardboard
+        guid: 55e34d4b8d48a74191b92acf74847aef
+        id: 1229756253
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: f3526a42261b4c4591c0f880900c5f79
+        - ElementName: Garbage_Material
+          ObjectType: 11
+          guid: 1694711b24bc584dbf116440f8e208cd
+        - ElementName: Cardboard
+          ObjectType: 10
+          guid: 55e34d4b8d48a74191b92acf74847aef
+      - name: Glass
+        guid: 6a0f3cbde20ddf4a80b1d2a07f29fd85
+        id: 2449969375
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: f3526a42261b4c4591c0f880900c5f79
+        - ElementName: Garbage_Material
+          ObjectType: 11
+          guid: 1694711b24bc584dbf116440f8e208cd
+        - ElementName: Glass
+          ObjectType: 10
+          guid: 6a0f3cbde20ddf4a80b1d2a07f29fd85
+      - name: Metal
+        guid: 967b6137cd9ae24ea618a31d6fb8606e
+        id: 2473969246
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: f3526a42261b4c4591c0f880900c5f79
+        - ElementName: Garbage_Material
+          ObjectType: 11
+          guid: 1694711b24bc584dbf116440f8e208cd
+        - ElementName: Metal
+          ObjectType: 10
+          guid: 967b6137cd9ae24ea618a31d6fb8606e
+      - name: Paper
+        guid: 7e855ff4767d3e498d1b50748efae778
+        id: 3126687001
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: f3526a42261b4c4591c0f880900c5f79
+        - ElementName: Garbage_Material
+          ObjectType: 11
+          guid: 1694711b24bc584dbf116440f8e208cd
+        - ElementName: Paper
+          ObjectType: 10
+          guid: 7e855ff4767d3e498d1b50748efae778
+      - name: Plastic
+        guid: f62cf6a7000c4f44bc09414e1b012965
+        id: 660835419
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: f3526a42261b4c4591c0f880900c5f79
+        - ElementName: Garbage_Material
+          ObjectType: 11
+          guid: 1694711b24bc584dbf116440f8e208cd
+        - ElementName: Plastic
+          ObjectType: 10
+          guid: f62cf6a7000c4f44bc09414e1b012965
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     PathAndIcons:
@@ -153,7 +396,7 @@ MonoBehaviour:
     m_lastTime: -8584925939862347778
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 060000000700000008000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

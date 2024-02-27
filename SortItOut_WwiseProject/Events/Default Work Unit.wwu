@@ -25,7 +25,8 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Garbage_Deposit" ID="{2B5AFDBB-F952-4A2B-BA6A-8234434322A7}"/>
+				<Event Name="Item_Deposit" ID="{2B5AFDBB-F952-4A2B-BA6A-8234434322A7}"/>
+				<Event Name="Item_Pickup" ID="{BA5CE043-33AE-464E-BB97-E7CD934CB12F}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

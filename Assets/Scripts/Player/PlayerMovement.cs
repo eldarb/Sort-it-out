@@ -36,8 +36,6 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         playerManager = GetComponent<PlayerManager>();
-        m_AudioSource = GetComponent<AudioSource>();
-        m_AudioSource.clip = m_FootStepsSFX;
         isAudioOn = false;
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using AK.Wwise;
 
 public class PlayerGrounded : MonoBehaviour
 {
@@ -22,11 +23,7 @@ public class PlayerGrounded : MonoBehaviour
     /// <summary>
     /// private AudioClip variable to hold the footsteps SFX.
     /// </summary>
-    public AudioClip m_JumpingSFX;
-    /// <summary>
-    /// private AudioSource variable to hold the Player's AudioSource.
-    /// </summary>
-    private AudioSource m_AudioSource;
+    public AK.Wwise.Event jumpEventSfx;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +31,6 @@ public class PlayerGrounded : MonoBehaviour
         playerManager = GetComponent<PlayerManager>();
         jumpTimeoutDelta = jumpTimeout;
         fallTimeoutDelta = fallTimeout;
-        m_AudioSource = GetComponent<AudioSource>();
     }
     public void GroundedCheck()
     {
@@ -51,7 +47,7 @@ public class PlayerGrounded : MonoBehaviour
             if (playerManager.playerInputManager.isJumping && jumpTimeoutDelta <= 0.0f)
             {
                 yVelocity = Mathf.Sqrt(jumpHeight * -2f * gravityForce);
-                m_AudioSource.PlayOneShot(m_JumpingSFX);
+                jumpEventSfx.Post(this.gameObject);
             }
 
             if (jumpTimeoutDelta >= 0.0f)

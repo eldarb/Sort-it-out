@@ -7,8 +7,8 @@
 					<RTPCValueList ShowAll="true"/>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Negative" ID="{EF8C32F0-8ED7-450C-B4D5-E8A43DAE585B}"/>
-						<CurrentSwitchRef Name="Paper" ID="{F45F857E-7D76-493E-8D1B-50748EFAE778}"/>
+						<CurrentSwitchRef Name="Positive" ID="{CD29D1FC-0AB9-4545-944C-F1E1D81D36B9}"/>
+						<CurrentSwitchRef Name="Cardboard" ID="{4B4DE355-488D-41A7-91B9-2ACF74847AEF}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

@@ -817,270 +817,415 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="Pickup_Plastic_Bottle_2" ID="{D02E29EC-1F1F-4869-B912-B25B135D1B8C}" ShortID="578124427">
+										<SwitchContainer Name="Pickup_Material" ID="{67716C42-C9FB-4C50-A887-BACFA45EAFBA}" ShortID="167097570">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
 												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Pickup_Plastic_Bottle_2" ID="{4C62AD0B-0E0A-44B7-931C-71630F493797}">
-													<Language>SFX</Language>
-													<AudioFile>Sounds\Pickup_Plastic_Bottle_2.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="781278562"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Pickup_Plastic_Bottle_2" ID="{4C62AD0B-0E0A-44B7-931C-71630F493797}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="Pickup_Cardboard_1" ID="{4860B085-C380-4CBB-BEF0-F13DE64D4538}" ShortID="363649552">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+												<Reference Name="DefaultSwitchOrState">
+													<ObjectRef Name="Plastic" ID="{A7F62CF6-0C00-444F-BC09-414E1B012965}" WorkUnitID="{426A52F3-1B26-454C-91C0-F880900C5F79}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
 												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Pickup_Cardboard_1" ID="{08E82AE7-6DC9-45B0-9AB0-C620C9BCEE52}">
-													<Language>SFX</Language>
-													<AudioFile>Sounds\Pickup_Cardboard_1.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="931857083"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Pickup_Cardboard_1" ID="{08E82AE7-6DC9-45B0-9AB0-C620C9BCEE52}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="Pickup_Paper_3" ID="{9B148B79-6F7D-4401-9A01-16DC5C34CD01}" ShortID="819901696">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+												<Reference Name="SwitchGroupOrStateGroup">
+													<ObjectRef Name="Garbage_Material" ID="{1B719416-BC24-4D58-BF11-6440F8E208CD}" WorkUnitID="{426A52F3-1B26-454C-91C0-F880900C5F79}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Pickup_Paper_3" ID="{4E35EABB-77C7-47B6-B15C-6DE6670B46BB}">
-													<Language>SFX</Language>
-													<AudioFile>Sounds\Pickup_Paper_3.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="601581355"/>
-													</MediaIDList>
-												</AudioFileSource>
+												<RandomSequenceContainer Name="Plastic_Bottle" ID="{4EDB6908-006C-4C0B-93D7-85D526EFDDCA}" ShortID="393336550">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="Pickup_Plastic_Bottle_2" ID="{D02E29EC-1F1F-4869-B912-B25B135D1B8C}" ShortID="578124427">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Pickup_Plastic_Bottle_2" ID="{4C62AD0B-0E0A-44B7-931C-71630F493797}">
+																	<Language>SFX</Language>
+																	<AudioFile>Sounds\Pickup_Plastic_Bottle_2.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="781278562"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Pickup_Plastic_Bottle_2" ID="{4C62AD0B-0E0A-44B7-931C-71630F493797}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Pickup_Plastic_Bottle_3" ID="{6DFFD196-F2A8-4318-8048-E19FDEEB7A5E}" ShortID="60820789">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Pickup_Plastic_Bottle_3" ID="{A26C6576-ABE3-45D8-96F9-5D901E2938D8}">
+																	<Language>SFX</Language>
+																	<AudioFile>Sounds\Pickup_Plastic_Bottle_3.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="215173330"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Pickup_Plastic_Bottle_3" ID="{A26C6576-ABE3-45D8-96F9-5D901E2938D8}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Pickup_Plastic_Bottle_1" ID="{0EF974E8-7963-4462-906C-7CE52987EA99}" ShortID="902851265">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Pickup_Plastic_Bottle_1" ID="{A6B8CE03-E909-4534-9EFD-95BCC7E34357}">
+																	<Language>SFX</Language>
+																	<AudioFile>Sounds\Pickup_Plastic_Bottle_1.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="715211145"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Pickup_Plastic_Bottle_1" ID="{A6B8CE03-E909-4534-9EFD-95BCC7E34357}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="Metal_Can" ID="{66E4DB33-45A7-4354-8304-5B4955F94C7E}" ShortID="581147416">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="Pickup_Can_3" ID="{FF4856F8-8510-43CD-BED8-4886A06636B9}" ShortID="150668259">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Pickup_Can_3" ID="{9E8A97DE-B7FB-42D5-887D-3C67FCB64AED}">
+																	<Language>SFX</Language>
+																	<AudioFile>Sounds\Pickup_Can_3.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1010058474"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Pickup_Can_3" ID="{9E8A97DE-B7FB-42D5-887D-3C67FCB64AED}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Pickup_Can_1" ID="{0EFDCE1B-DE6F-4A75-AF15-BA2AB1C2BF7A}" ShortID="762870807">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Pickup_Can_1" ID="{9795FA28-8EDE-486A-ADC5-001A4BB3EFFE}">
+																	<Language>SFX</Language>
+																	<AudioFile>Sounds\Pickup_Can_1.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="448049572"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Pickup_Can_1" ID="{9795FA28-8EDE-486A-ADC5-001A4BB3EFFE}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Pickup_Can_2" ID="{9C3E6820-34CA-46BE-86F4-7E049F679754}" ShortID="1054960678">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Pickup_Can_2" ID="{B30FF2D3-15A3-4B9D-BD0F-F47080ED7804}">
+																	<Language>SFX</Language>
+																	<AudioFile>Sounds\Pickup_Can_2.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="333927466"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Pickup_Can_2" ID="{B30FF2D3-15A3-4B9D-BD0F-F47080ED7804}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="Paper_Ball" ID="{0AAC51B0-8EB3-46D8-82BD-92B90ADBEFD4}" ShortID="830127139">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="Paper_Pickup" ID="{128F6A27-3150-4935-B4F1-743878F39490}" ShortID="228151042">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Paper_Pickup" ID="{DDFB37B3-FCAD-4213-B82F-30D3C689EF91}">
+																	<Language>SFX</Language>
+																	<AudioFile>Sounds\Paper_Pickup.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="900989223"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Paper_Pickup" ID="{DDFB37B3-FCAD-4213-B82F-30D3C689EF91}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Pickup_Paper_3" ID="{9B148B79-6F7D-4401-9A01-16DC5C34CD01}" ShortID="819901696">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Pickup_Paper_3" ID="{4E35EABB-77C7-47B6-B15C-6DE6670B46BB}">
+																	<Language>SFX</Language>
+																	<AudioFile>Sounds\Pickup_Paper_3.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="601581355"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Pickup_Paper_3" ID="{4E35EABB-77C7-47B6-B15C-6DE6670B46BB}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Pickup_Paper_2" ID="{58CD911D-8442-492C-8AF6-187D188B4F94}" ShortID="644968102">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Pickup_Paper_2" ID="{D7A804B3-E416-4E94-A231-66FEBDF9FFBF}">
+																	<Language>SFX</Language>
+																	<AudioFile>Sounds\Pickup_Paper_2.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="608034056"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Pickup_Paper_2" ID="{D7A804B3-E416-4E94-A231-66FEBDF9FFBF}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="Cardboard" ID="{0F67FDF3-3169-4439-8421-A8C40BB2EDEE}" ShortID="917250652">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="Pickup_Cardboard_1" ID="{4860B085-C380-4CBB-BEF0-F13DE64D4538}" ShortID="363649552">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Pickup_Cardboard_1" ID="{08E82AE7-6DC9-45B0-9AB0-C620C9BCEE52}">
+																	<Language>SFX</Language>
+																	<AudioFile>Sounds\Pickup_Cardboard_1.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="931857083"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Pickup_Cardboard_1" ID="{08E82AE7-6DC9-45B0-9AB0-C620C9BCEE52}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="Glass Bottle" ID="{D55C2893-3A25-4674-BDB6-B55B0819FC3E}" ShortID="1007417613">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="pickup_Glass_Bottle_1" ID="{E369709E-D545-468D-8E6F-0F0E79DCB69F}" ShortID="290714219">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="pickup_Glass_Bottle_1" ID="{BD031756-7CBD-4020-BF49-97120E929C73}">
+																	<Language>SFX</Language>
+																	<AudioFile>Sounds\pickup_Glass_Bottle_1.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="888375220"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="pickup_Glass_Bottle_1" ID="{BD031756-7CBD-4020-BF49-97120E929C73}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="Plastic" ID="{B193051C-C282-4EAC-9087-A3ADB313B3AA}" ShortID="459255407">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="Plastic_Pickup" ID="{BDFF3AF9-E277-423C-807F-A37396440615}" ShortID="562710362">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Plastic_Pickup" ID="{AC18A97D-F298-4EF2-801C-4B63B05004BF}">
+																	<Language>SFX</Language>
+																	<AudioFile>Sounds\Plastic_Pickup.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1019378082"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Plastic_Pickup" ID="{AC18A97D-F298-4EF2-801C-4B63B05004BF}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
 											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Pickup_Paper_3" ID="{4E35EABB-77C7-47B6-B15C-6DE6670B46BB}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="pickup_Glass_Bottle_1" ID="{E369709E-D545-468D-8E6F-0F0E79DCB69F}" ShortID="290714219">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="pickup_Glass_Bottle_1" ID="{BD031756-7CBD-4020-BF49-97120E929C73}">
-													<Language>SFX</Language>
-													<AudioFile>Sounds\pickup_Glass_Bottle_1.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="888375220"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="pickup_Glass_Bottle_1" ID="{BD031756-7CBD-4020-BF49-97120E929C73}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="Pickup_Paper_2" ID="{58CD911D-8442-492C-8AF6-187D188B4F94}" ShortID="644968102">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Pickup_Paper_2" ID="{D7A804B3-E416-4E94-A231-66FEBDF9FFBF}">
-													<Language>SFX</Language>
-													<AudioFile>Sounds\Pickup_Paper_2.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="608034056"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Pickup_Paper_2" ID="{D7A804B3-E416-4E94-A231-66FEBDF9FFBF}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="Pickup_Plastic_Bottle_1" ID="{0EF974E8-7963-4462-906C-7CE52987EA99}" ShortID="902851265">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Pickup_Plastic_Bottle_1" ID="{A6B8CE03-E909-4534-9EFD-95BCC7E34357}">
-													<Language>SFX</Language>
-													<AudioFile>Sounds\Pickup_Plastic_Bottle_1.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="715211145"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Pickup_Plastic_Bottle_1" ID="{A6B8CE03-E909-4534-9EFD-95BCC7E34357}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="Paper_Pickup" ID="{128F6A27-3150-4935-B4F1-743878F39490}" ShortID="228151042">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Paper_Pickup" ID="{DDFB37B3-FCAD-4213-B82F-30D3C689EF91}">
-													<Language>SFX</Language>
-													<AudioFile>Sounds\Paper_Pickup.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="900989223"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Paper_Pickup" ID="{DDFB37B3-FCAD-4213-B82F-30D3C689EF91}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="Pickup_Can_1" ID="{0EFDCE1B-DE6F-4A75-AF15-BA2AB1C2BF7A}" ShortID="762870807">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Pickup_Can_1" ID="{9795FA28-8EDE-486A-ADC5-001A4BB3EFFE}">
-													<Language>SFX</Language>
-													<AudioFile>Sounds\Pickup_Can_1.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="448049572"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Pickup_Can_1" ID="{9795FA28-8EDE-486A-ADC5-001A4BB3EFFE}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="Pickup_Can_2" ID="{9C3E6820-34CA-46BE-86F4-7E049F679754}" ShortID="1054960678">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Pickup_Can_2" ID="{B30FF2D3-15A3-4B9D-BD0F-F47080ED7804}">
-													<Language>SFX</Language>
-													<AudioFile>Sounds\Pickup_Can_2.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="333927466"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Pickup_Can_2" ID="{B30FF2D3-15A3-4B9D-BD0F-F47080ED7804}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="Pickup_Can_3" ID="{FF4856F8-8510-43CD-BED8-4886A06636B9}" ShortID="150668259">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Pickup_Can_3" ID="{9E8A97DE-B7FB-42D5-887D-3C67FCB64AED}">
-													<Language>SFX</Language>
-													<AudioFile>Sounds\Pickup_Can_3.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="1010058474"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Pickup_Can_3" ID="{9E8A97DE-B7FB-42D5-887D-3C67FCB64AED}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="Plastic_Pickup" ID="{BDFF3AF9-E277-423C-807F-A37396440615}" ShortID="562710362">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Plastic_Pickup" ID="{AC18A97D-F298-4EF2-801C-4B63B05004BF}">
-													<Language>SFX</Language>
-													<AudioFile>Sounds\Plastic_Pickup.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="1019378082"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Plastic_Pickup" ID="{AC18A97D-F298-4EF2-801C-4B63B05004BF}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="Pickup_Plastic_Bottle_3" ID="{6DFFD196-F2A8-4318-8048-E19FDEEB7A5E}" ShortID="60820789">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Pickup_Plastic_Bottle_3" ID="{A26C6576-ABE3-45D8-96F9-5D901E2938D8}">
-													<Language>SFX</Language>
-													<AudioFile>Sounds\Pickup_Plastic_Bottle_3.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="215173330"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Pickup_Plastic_Bottle_3" ID="{A26C6576-ABE3-45D8-96F9-5D901E2938D8}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
+											<GroupingInfo>
+												<GroupingBehaviorList>
+													<GroupingBehavior>
+														<ItemRef Name="Plastic_Bottle" ID="{4EDB6908-006C-4C0B-93D7-85D526EFDDCA}"/>
+													</GroupingBehavior>
+													<GroupingBehavior>
+														<ItemRef Name="Plastic" ID="{B193051C-C282-4EAC-9087-A3ADB313B3AA}"/>
+													</GroupingBehavior>
+													<GroupingBehavior>
+														<ItemRef Name="Metal_Can" ID="{66E4DB33-45A7-4354-8304-5B4955F94C7E}"/>
+													</GroupingBehavior>
+													<GroupingBehavior>
+														<ItemRef Name="Glass Bottle" ID="{D55C2893-3A25-4674-BDB6-B55B0819FC3E}"/>
+													</GroupingBehavior>
+													<GroupingBehavior>
+														<ItemRef Name="Paper_Ball" ID="{0AAC51B0-8EB3-46D8-82BD-92B90ADBEFD4}"/>
+													</GroupingBehavior>
+													<GroupingBehavior>
+														<ItemRef Name="Cardboard" ID="{0F67FDF3-3169-4439-8421-A8C40BB2EDEE}"/>
+													</GroupingBehavior>
+												</GroupingBehaviorList>
+												<GroupingList>
+													<Grouping>
+														<SwitchRef Name="Cardboard" ID="{4B4DE355-488D-41A7-91B9-2ACF74847AEF}"/>
+														<ItemList>
+															<ItemRef Name="Cardboard" ID="{0F67FDF3-3169-4439-8421-A8C40BB2EDEE}"/>
+														</ItemList>
+													</Grouping>
+													<Grouping>
+														<SwitchRef Name="Glass" ID="{BD3C0F6A-0DE2-4ADF-80B1-D2A07F29FD85}"/>
+														<ItemList>
+															<ItemRef Name="Glass Bottle" ID="{D55C2893-3A25-4674-BDB6-B55B0819FC3E}"/>
+														</ItemList>
+													</Grouping>
+													<Grouping>
+														<SwitchRef Name="Paper" ID="{F45F857E-7D76-493E-8D1B-50748EFAE778}"/>
+														<ItemList>
+															<ItemRef Name="Paper_Ball" ID="{0AAC51B0-8EB3-46D8-82BD-92B90ADBEFD4}"/>
+														</ItemList>
+													</Grouping>
+													<Grouping>
+														<SwitchRef Name="Metal" ID="{37617B96-9ACD-4EE2-A618-A31D6FB8606E}"/>
+														<ItemList>
+															<ItemRef Name="Metal_Can" ID="{66E4DB33-45A7-4354-8304-5B4955F94C7E}"/>
+														</ItemList>
+													</Grouping>
+													<Grouping>
+														<SwitchRef Name="Plastic" ID="{A7F62CF6-0C00-444F-BC09-414E1B012965}"/>
+														<ItemList>
+															<ItemRef Name="Plastic" ID="{B193051C-C282-4EAC-9087-A3ADB313B3AA}"/>
+															<ItemRef Name="Plastic_Bottle" ID="{4EDB6908-006C-4C0B-93D7-85D526EFDDCA}"/>
+														</ItemList>
+													</Grouping>
+												</GroupingList>
+											</GroupingInfo>
+										</SwitchContainer>
 									</ChildrenList>
 								</ActorMixer>
 								<SwitchContainer Name="Garbage_Feedback" ID="{39C9264F-5EB5-45B0-AC5E-3F2684B8D5E1}" ShortID="412926383">

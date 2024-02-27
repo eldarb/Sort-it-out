@@ -9,6 +9,7 @@
 						<Switch Name="Plastic" ID="{A7F62CF6-0C00-444F-BC09-414E1B012965}"/>
 						<Switch Name="Glass" ID="{BD3C0F6A-0DE2-4ADF-80B1-D2A07F29FD85}"/>
 						<Switch Name="Paper" ID="{F45F857E-7D76-493E-8D1B-50748EFAE778}"/>
+						<Switch Name="Cardboard" ID="{4B4DE355-488D-41A7-91B9-2ACF74847AEF}"/>
 					</ChildrenList>
 				</SwitchGroup>
 				<SwitchGroup Name="Garbage_Feedback" ID="{79623BBE-2FCE-493F-9AD7-8B39EFF526E5}">
