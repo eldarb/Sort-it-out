@@ -24,18 +24,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Crouch",
+                    "name": "Sprint",
                     "type": "Button",
-                    "id": "94626ad5-7c78-485d-978a-0d3e55e42bd0",
+                    "id": "4b3eed95-6213-4403-9ba4-b1f80ac9204d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Sprint",
+                    "name": "Crouch",
                     "type": "Button",
-                    "id": "4b3eed95-6213-4403-9ba4-b1f80ac9204d",
+                    "id": "94626ad5-7c78-485d-978a-0d3e55e42bd0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -205,6 +205,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "6e1524c4-7731-4d29-a74e-b6072f73ed6d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -216,6 +225,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ExitBackToMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3be60df3-1710-4b35-9c62-50c6e14af3e3",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

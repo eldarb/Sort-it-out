@@ -26,7 +26,7 @@ public class PlayerLadderMovement : MonoBehaviour
     {
         playerManager = GetComponent<PlayerManager>();
         climbingLadder = false;
-        climbingLadderSpeed = 4;
+        climbingLadderSpeed = 15;
     }
 
     /// <summary>

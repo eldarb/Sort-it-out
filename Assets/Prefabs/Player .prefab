@@ -83,6 +83,10 @@ GameObject:
   - component: {fileID: 3679165776560597458}
   - component: {fileID: 5853127631850114289}
   - component: {fileID: 2457009524917683469}
+  - component: {fileID: -8468480594991747060}
+  - component: {fileID: 4494983400638532410}
+  - component: {fileID: -2481079947613529631}
+  m_Layer: 0
   - component: {fileID: 8040358792043959582}
   - component: {fileID: 8033989257481725245}
   - component: {fileID: 3057741708679542612}
@@ -277,6 +281,9 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+--- !u!114 &-8468480594991747060
+=======
 --- !u!114 &8040358792043959582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,6 +305,7 @@ MonoBehaviour:
   characterController: {fileID: 0}
   movement: {x: 0, y: 0, z: 0}
 --- !u!114 &8033989257481725245
+>>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -344,7 +352,11 @@ MonoBehaviour:
   currentSpeed: 0
   standHeight: 2
   crouchHeight: 1
+<<<<<<< HEAD
+--- !u!114 &4494983400638532410
+=======
 --- !u!114 &876927702075947039
+>>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -353,10 +365,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 3369270438972729448}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
+  m_Script: {fileID: 11500000, guid: 7c0ea79f840dd6043aad84df6963e3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpHeight: 2
+  gravityValue: -9.81
+  walkSpeed: 5
+  sprintSpeed: 10
+  turnSmoothTime: 0.1
+--- !u!114 &-2481079947613529631
+=======
   m_Script: {fileID: 11500000, guid: 00ae4c430a498cc4dbfc9daa69d1a50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &3448563320777271534
+>>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -365,6 +389,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3369270438972729448}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
+  m_Script: {fileID: 11500000, guid: a72b169a570f3b54baa7b5c757403e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+=======
   m_Script: {fileID: 11500000, guid: 67e2f91e6e9f64a4892985922ea5364f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -542,3 +572,4 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3850676267960901175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> main
