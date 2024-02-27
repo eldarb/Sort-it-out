@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{64C52849-4C51-4B4E-91CA-2C375A915BF8}" SchemaVersion="119">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{64C52849-4C51-4B4E-91CA-2C375A915BF8}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{64C52849-4C51-4B4E-91CA-2C375A915BF8}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Wowza" ID="{D2747722-CC3C-4176-B51C-F7A3BEED759D}" ShortID="788498109">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+						</Reference>
+					</ReferenceList>
+				</Sound>
+				<Sound Name="Paper_Pickup" ID="{DEF08C05-3060-4C96-ACEB-90B7676B5F45}" ShortID="690983107">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Paper_Pickup" ID="{5A140856-E4BF-45F0-A386-9EA760F4BE13}">
+							<Language>SFX</Language>
+							<AudioFile>Paper_Pickup.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="587780320"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Paper_Pickup" ID="{5A140856-E4BF-45F0-A386-9EA760F4BE13}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>
