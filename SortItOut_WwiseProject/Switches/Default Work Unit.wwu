@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{426A52F3-1B26-454C-91C0-F880900C5F79}" SchemaVersion="119">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{426A52F3-1B26-454C-91C0-F880900C5F79}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{426A52F3-1B26-454C-91C0-F880900C5F79}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Garbage_Material" ID="{1B719416-BC24-4D58-BF11-6440F8E208CD}">
+					<ChildrenList>
+						<Switch Name="Metal" ID="{37617B96-9ACD-4EE2-A618-A31D6FB8606E}"/>
+						<Switch Name="Plastic" ID="{A7F62CF6-0C00-444F-BC09-414E1B012965}"/>
+						<Switch Name="Glass" ID="{BD3C0F6A-0DE2-4ADF-80B1-D2A07F29FD85}"/>
+						<Switch Name="Paper" ID="{F45F857E-7D76-493E-8D1B-50748EFAE778}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="Garbage_Feedback" ID="{79623BBE-2FCE-493F-9AD7-8B39EFF526E5}">
+					<ChildrenList>
+						<Switch Name="Positive" ID="{CD29D1FC-0AB9-4545-944C-F1E1D81D36B9}"/>
+						<Switch Name="Negative" ID="{EF8C32F0-8ED7-450C-B4D5-E8A43DAE585B}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>

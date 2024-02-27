@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: feb49d6059e4074e9edc4941581ac551
     GuidInternal: 
-    m_lastTime: -8584925939861117836
+    m_lastTime: -8584925932965850212
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -54,6 +54,20 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+    - name: New Master Bus
+      guid: 1825713ea05e3b45976e7f29cb22dff7
+      id: 3193046343
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: feb49d6059e4074e9edc4941581ac551
+      - ElementName: New Master Bus
+        ObjectType: 2
+        guid: 1825713ea05e3b45976e7f29cb22dff7
+      Path: Master-Mixer Hierarchy\Default Work Unit\New Master Bus
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:

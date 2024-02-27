@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{B912E440-B8EE-4DE2-9428-F2C9E2D2530F}" SchemaVersion="119">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{B912E440-B8EE-4DE2-9428-F2C9E2D2530F}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{B912E440-B8EE-4DE2-9428-F2C9E2D2530F}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Footstep" ID="{2809AFED-9E72-49F0-B698-5BB97D729A20}">
+					<ChildrenList>
+						<Action Name="" ID="{6E9BCD80-229D-4E48-A4B0-2A6A6764D36D}" ShortID="871435649">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{CA3EDD03-4EBC-4A6A-966F-362671006588}" WorkUnitID="{64C52849-4C51-4B4E-91CA-2C375A915BF8}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Jump" ID="{394079D5-F10D-4A58-B68B-DE4C3026BBE5}">
+					<ChildrenList>
+						<Action Name="" ID="{9D621BBC-623C-47B9-8E9E-726F36F8335F}" ShortID="201741162">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Jump" ID="{F3AE548D-334D-44F6-95B7-4E84E99DC9F0}" WorkUnitID="{64C52849-4C51-4B4E-91CA-2C375A915BF8}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Garbage_Deposit" ID="{2B5AFDBB-F952-4A2B-BA6A-8234434322A7}"/>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>
