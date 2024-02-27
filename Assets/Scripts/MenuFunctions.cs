@@ -48,7 +48,7 @@ public class MenuFunctions : MonoBehaviour
         // Quit out of built applications
         Application.Quit();
         // Quit out of Unity Editor
-        UnityEditor.EditorApplication.isPlaying = false;
+        // UnityEditor.EditorApplication.isPlaying = false;
     }
 
 

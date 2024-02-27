@@ -46,18 +46,18 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Crouch"",
+                    ""name"": ""Sprint"",
                     ""type"": ""Button"",
-                    ""id"": ""94626ad5-7c78-485d-978a-0d3e55e42bd0"",
+                    ""id"": ""4b3eed95-6213-4403-9ba4-b1f80ac9204d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Sprint"",
+                    ""name"": ""Crouch"",
                     ""type"": ""Button"",
-                    ""id"": ""4b3eed95-6213-4403-9ba4-b1f80ac9204d"",
+                    ""id"": ""94626ad5-7c78-485d-978a-0d3e55e42bd0"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -227,6 +227,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""6e1524c4-7731-4d29-a74e-b6072f73ed6d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -240,6 +249,17 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""ExitBackToMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3be60df3-1710-4b35-9c62-50c6e14af3e3"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -250,14 +270,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
-        m_Gameplay_Crouch = m_Gameplay.FindAction("Crouch", throwIfNotFound: true);
         m_Gameplay_Sprint = m_Gameplay.FindAction("Sprint", throwIfNotFound: true);
+        m_Gameplay_Crouch = m_Gameplay.FindAction("Crouch", throwIfNotFound: true);
         m_Gameplay_PickUp = m_Gameplay.FindAction("PickUp", throwIfNotFound: true);
         m_Gameplay_Throw = m_Gameplay.FindAction("Throw", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_ExitBackToMenu = m_UI.FindAction("ExitBackToMenu", throwIfNotFound: true);
+        m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -321,8 +342,8 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_Gameplay_Move;
     private readonly InputAction m_Gameplay_Jump;
-    private readonly InputAction m_Gameplay_Crouch;
     private readonly InputAction m_Gameplay_Sprint;
+    private readonly InputAction m_Gameplay_Crouch;
     private readonly InputAction m_Gameplay_PickUp;
     private readonly InputAction m_Gameplay_Throw;
     private readonly InputAction m_Gameplay_Look;
@@ -332,8 +353,8 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         public GameplayActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
-        public InputAction @Crouch => m_Wrapper.m_Gameplay_Crouch;
         public InputAction @Sprint => m_Wrapper.m_Gameplay_Sprint;
+        public InputAction @Crouch => m_Wrapper.m_Gameplay_Crouch;
         public InputAction @PickUp => m_Wrapper.m_Gameplay_PickUp;
         public InputAction @Throw => m_Wrapper.m_Gameplay_Throw;
         public InputAction @Look => m_Wrapper.m_Gameplay_Look;
@@ -352,12 +373,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
-            @Crouch.started += instance.OnCrouch;
-            @Crouch.performed += instance.OnCrouch;
-            @Crouch.canceled += instance.OnCrouch;
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
+            @Crouch.started += instance.OnCrouch;
+            @Crouch.performed += instance.OnCrouch;
+            @Crouch.canceled += instance.OnCrouch;
             @PickUp.started += instance.OnPickUp;
             @PickUp.performed += instance.OnPickUp;
             @PickUp.canceled += instance.OnPickUp;
@@ -377,12 +398,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
-            @Crouch.started -= instance.OnCrouch;
-            @Crouch.performed -= instance.OnCrouch;
-            @Crouch.canceled -= instance.OnCrouch;
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
+            @Crouch.started -= instance.OnCrouch;
+            @Crouch.performed -= instance.OnCrouch;
+            @Crouch.canceled -= instance.OnCrouch;
             @PickUp.started -= instance.OnPickUp;
             @PickUp.performed -= instance.OnPickUp;
             @PickUp.canceled -= instance.OnPickUp;
@@ -414,11 +435,13 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_UI;
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
     private readonly InputAction m_UI_ExitBackToMenu;
+    private readonly InputAction m_UI_Pause;
     public struct UIActions
     {
         private @PlayerActions m_Wrapper;
         public UIActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @ExitBackToMenu => m_Wrapper.m_UI_ExitBackToMenu;
+        public InputAction @Pause => m_Wrapper.m_UI_Pause;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -431,6 +454,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @ExitBackToMenu.started += instance.OnExitBackToMenu;
             @ExitBackToMenu.performed += instance.OnExitBackToMenu;
             @ExitBackToMenu.canceled += instance.OnExitBackToMenu;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -438,6 +464,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @ExitBackToMenu.started -= instance.OnExitBackToMenu;
             @ExitBackToMenu.performed -= instance.OnExitBackToMenu;
             @ExitBackToMenu.canceled -= instance.OnExitBackToMenu;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -459,8 +488,8 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnCrouch(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
         void OnPickUp(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
@@ -468,5 +497,6 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     public interface IUIActions
     {
         void OnExitBackToMenu(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
