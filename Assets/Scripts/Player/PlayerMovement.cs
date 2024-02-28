@@ -43,11 +43,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        currentSpeed = speed;
+        currentSpeed = speed;        
+        Debug.Log(GameEventsManager.Instance == null);
+        GameEventsManager.Instance.playerEvents.onSprintStart += SetSpeedSprint;
+        GameEventsManager.Instance.playerEvents.onCrouchStart += SetSpeedCrouch;
+        GameEventsManager.Instance.playerEvents.onSprintEnd += SetSpeed;
+        GameEventsManager.Instance.playerEvents.onCrouchEnd += CrouchEnd;
     }
 
     private void OnEnable()
     {
+        if (GameEventsManager.Instance == null) { return; }
         GameEventsManager.Instance.playerEvents.onSprintStart += SetSpeedSprint;
         GameEventsManager.Instance.playerEvents.onCrouchStart += SetSpeedCrouch;
         GameEventsManager.Instance.playerEvents.onSprintEnd += SetSpeed;

@@ -19,12 +19,22 @@ public class PlayerGrounded : MonoBehaviour
     private float jumpTimeoutDelta;
     private float fallTimeoutDelta;
 
+    /// <summary>
+    /// private AudioClip variable to hold the footsteps SFX.
+    /// </summary>
+    public AudioClip m_JumpingSFX;
+    /// <summary>
+    /// private AudioSource variable to hold the Player's AudioSource.
+    /// </summary>
+    private AudioSource m_AudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         playerManager = GetComponent<PlayerManager>();
         jumpTimeoutDelta = jumpTimeout;
         fallTimeoutDelta = fallTimeout;
+        m_AudioSource = GetComponent<AudioSource>();
     }
     public void GroundedCheck()
     {
@@ -41,6 +51,7 @@ public class PlayerGrounded : MonoBehaviour
             if (playerManager.playerInputManager.isJumping && jumpTimeoutDelta <= 0.0f)
             {
                 yVelocity = Mathf.Sqrt(jumpHeight * -2f * gravityForce);
+                m_AudioSource.PlayOneShot(m_JumpingSFX);
             }
 
             if (jumpTimeoutDelta >= 0.0f)
