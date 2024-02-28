@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     public PlayerLadderMovement playerLadderMovement;
 
     public CharacterController characterController;
+    public PowerGauge powerGauge;
 
     public Vector3 movement;
 
@@ -29,6 +30,7 @@ public class PlayerManager : MonoBehaviour
         playerGrounded = GetComponent<PlayerGrounded>();
         playerLadderMovement = GetComponent<PlayerLadderMovement>();
         characterController = GetComponent<CharacterController>();
+        powerGauge = GetComponentInChildren<PowerGauge>();
     }
 
     // Update is called once per frame
@@ -38,5 +40,8 @@ public class PlayerManager : MonoBehaviour
         playerMovement.Move();
         movement = playerLadderMovement.HandleLadderMovement(movement);
         characterController.Move(movement);
+        if (powerGauge != null) {
+            powerGauge.AdjustPower();
+        }
     }
 }

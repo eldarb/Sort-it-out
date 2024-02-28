@@ -13,6 +13,7 @@ public class PlayerInputManager : MonoBehaviour
     public bool isSprinting { get; private set; }
     public bool isHolding { get; private set; }
     public bool isThrowing { get; private set; }
+    public float power { get; private set; }
 
     private void Start()
     {
@@ -83,6 +84,14 @@ public class PlayerInputManager : MonoBehaviour
             throwAction.performed += OnThrowItemStart;
             throwAction.canceled += OnThrowItemEnd;
         }
+
+        InputAction adjustPowerAction = input.actions.FindAction("AdjustPower");
+        if (adjustPowerAction != null)
+        {
+            adjustPowerAction.started += OnAdjustPowerStart;
+            adjustPowerAction.performed += OnAdjustPowerStart;
+            adjustPowerAction.canceled += OnAdjustPowerEnd;
+        }
     }
     void UnRegisterHandle(PlayerInput input)
     {
@@ -132,6 +141,14 @@ public class PlayerInputManager : MonoBehaviour
             throwAction.started -= OnThrowItemStart;
             throwAction.performed -= OnThrowItemStart;
             throwAction.canceled -= OnThrowItemEnd;
+        }
+
+        InputAction adjustPowerAction = input.actions.FindAction("AdjustPower");
+        if (adjustPowerAction != null)
+        {
+            adjustPowerAction.started -= OnAdjustPowerStart;
+            adjustPowerAction.performed -= OnAdjustPowerStart;
+            adjustPowerAction.canceled -= OnAdjustPowerEnd;
         }
     }
     void OnMoveStart(InputAction.CallbackContext context)
@@ -191,6 +208,16 @@ public class PlayerInputManager : MonoBehaviour
     {
         SetThrow(context.ReadValueAsButton());
     }
+    void OnAdjustPowerStart(InputAction.CallbackContext context)
+    {
+        SetPower(context.ReadValue<float>());
+    }
+
+    void OnAdjustPowerEnd(InputAction.CallbackContext context)
+    {
+        SetPower(0);
+    }
+
     void SetMove(Vector2 value)
     {
         move = value;
@@ -218,5 +245,10 @@ public class PlayerInputManager : MonoBehaviour
     void SetThrow(bool value)
     {
         isThrowing = value;
+    }
+
+    void SetPower(float value)
+    {
+        power = value;
     }
 }

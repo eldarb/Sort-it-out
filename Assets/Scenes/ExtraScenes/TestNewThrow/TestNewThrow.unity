@@ -1543,6 +1543,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4650029351908276313, guid: 1b8a4f8f205de3d479dfa130a3913535, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5582983350197781476, guid: 1b8a4f8f205de3d479dfa130a3913535, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
@@ -1550,6 +1554,14 @@ PrefabInstance:
     - target: {fileID: 6782887000227966856, guid: 1b8a4f8f205de3d479dfa130a3913535, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7253636966560461609, guid: 1b8a4f8f205de3d479dfa130a3913535, type: 3}
+      propertyPath: maxPower
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7253636966560461609, guid: 1b8a4f8f205de3d479dfa130a3913535, type: 3}
+      propertyPath: fluctuationRate
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7644353975622183558, guid: 1b8a4f8f205de3d479dfa130a3913535, type: 3}
       propertyPath: m_IsActive

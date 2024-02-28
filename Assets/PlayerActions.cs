@@ -89,6 +89,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": ""InvertVector2(invertX=false)"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""AdjustPower"",
+                    ""type"": ""Value"",
+                    ""id"": ""528f233b-bbfa-4f86-be0b-95d30b98a7d2"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -212,6 +221,17 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""PickUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c0210d80-0084-4e89-bcd5-5473e7073bd3"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AdjustPower"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -275,6 +295,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_Gameplay_PickUp = m_Gameplay.FindAction("PickUp", throwIfNotFound: true);
         m_Gameplay_Throw = m_Gameplay.FindAction("Throw", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
+        m_Gameplay_AdjustPower = m_Gameplay.FindAction("AdjustPower", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_ExitBackToMenu = m_UI.FindAction("ExitBackToMenu", throwIfNotFound: true);
@@ -347,6 +368,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_PickUp;
     private readonly InputAction m_Gameplay_Throw;
     private readonly InputAction m_Gameplay_Look;
+    private readonly InputAction m_Gameplay_AdjustPower;
     public struct GameplayActions
     {
         private @PlayerActions m_Wrapper;
@@ -358,6 +380,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         public InputAction @PickUp => m_Wrapper.m_Gameplay_PickUp;
         public InputAction @Throw => m_Wrapper.m_Gameplay_Throw;
         public InputAction @Look => m_Wrapper.m_Gameplay_Look;
+        public InputAction @AdjustPower => m_Wrapper.m_Gameplay_AdjustPower;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -388,6 +411,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
+            @AdjustPower.started += instance.OnAdjustPower;
+            @AdjustPower.performed += instance.OnAdjustPower;
+            @AdjustPower.canceled += instance.OnAdjustPower;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -413,6 +439,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
+            @AdjustPower.started -= instance.OnAdjustPower;
+            @AdjustPower.performed -= instance.OnAdjustPower;
+            @AdjustPower.canceled -= instance.OnAdjustPower;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -493,6 +522,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         void OnPickUp(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+        void OnAdjustPower(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
