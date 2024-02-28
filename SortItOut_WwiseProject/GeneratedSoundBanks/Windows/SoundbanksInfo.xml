@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{0C9D01B1-E815-2478-0F0D-10A94E5BF866}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3193046343" Name="New Master Bus"/>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<SwitchGroups>
+				<SwitchGroup Id="942024082" Name="Garbage_Material">
+					<Switches>
+						<Switch Id="660835419" Name="Plastic"/>
+						<Switch Id="1229756253" Name="Cardboard"/>
+						<Switch Id="2449969375" Name="Glass"/>
+						<Switch Id="2473969246" Name="Metal"/>
+						<Switch Id="3126687001" Name="Paper"/>
+					</Switches>
+				</SwitchGroup>
+				<SwitchGroup Id="2395097276" Name="Garbage_Feedback">
+					<Switches>
+						<Switch Id="1192865152" Name="Positive"/>
+						<Switch Id="4219547688" Name="Negative"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+		<SoundBank Id="3989171651" Type="User" Language="SFX" Hash="{12B21658-0B61-F921-1ADA-00F8D2FDA45A}">
+			<ShortName>Main_bank</ShortName>
+			<Path>Main_bank.bnk</Path>
+			<Media>
+				<File Id="103819672" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Sounds\footsteps_concrete_3.wav</ShortName>
+					<CachePath>SFX/Sounds/footsteps_concrete_3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="232299241" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Sounds\footsteps_concrete.wav</ShortName>
+					<CachePath>SFX/Sounds/footsteps_concrete_818F3B66.wem</CachePath>
+				</File>
+				<File Id="309514780" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Sounds\Jump_sound_1.wav</ShortName>
+					<CachePath>SFX/Sounds/Jump_sound_1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="362544429" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Sounds\footsteps_concrete_4.wav</ShortName>
+					<CachePath>SFX/Sounds/footsteps_concrete_4_818F3B66.wem</CachePath>
+				</File>
+				<File Id="499620606" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Sounds\footsteps_concrete_2.wav</ShortName>
+					<CachePath>SFX/Sounds/footsteps_concrete_2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="611167646" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Sounds\footsteps_concrete_6.wav</ShortName>
+					<CachePath>SFX/Sounds/footsteps_concrete_6_818F3B66.wem</CachePath>
+				</File>
+				<File Id="661018292" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Sounds\jump_sound_2.wav</ShortName>
+					<CachePath>SFX/Sounds/jump_sound_2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="937983605" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Sounds\footsteps_concrete_5.wav</ShortName>
+					<CachePath>SFX/Sounds/footsteps_concrete_5_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1866025847" Name="Footstep" DurationType="OneShot" DurationMin="0.32142857" DurationMax="0.4241043">
+					<MediaRefs>
+						<MediaRef Id="103819672"/>
+						<MediaRef Id="232299241"/>
+						<MediaRef Id="362544429"/>
+						<MediaRef Id="499620606"/>
+						<MediaRef Id="611167646"/>
+						<MediaRef Id="937983605"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1777413591" Name="Item_Deposit" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="566396871" Name="Item_Pickup" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3833651337" Name="Jump" DurationType="OneShot" DurationMin="0.3348125" DurationMax="0.4285625">
+					<MediaRefs>
+						<MediaRef Id="309514780"/>
+						<MediaRef Id="661018292"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{B8DF1D91-1891-C5DF-9BC5-47646260D4F3}</FileHash>
+</SoundBanksInfo>

@@ -1,0 +1,16 @@
+Event	ID	Name			Wwise Object Path	Notes
+	566396871	Item_Pickup			\Default Work Unit\Item_Pickup	
+	1777413591	Item_Deposit			\Default Work Unit\Item_Deposit	
+	1866025847	Footstep			\Default Work Unit\Footstep	
+	3833651337	Jump			\Default Work Unit\Jump	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	103819672	footsteps_concrete_3	C:\Users\Gordan\Documents\_Projects\GameJams\SortItOut\SortItOut_WwiseProject\.cache\Mac\SFX\Sounds\footsteps_concrete_3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Movement\Footsteps\FS_Right\footsteps_concrete_3		74908
+	232299241	footsteps_concrete	C:\Users\Gordan\Documents\_Projects\GameJams\SortItOut\SortItOut_WwiseProject\.cache\Mac\SFX\Sounds\footsteps_concrete_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Movement\Footsteps\FS_Right\footsteps_concrete		56796
+	309514780	Jump_sound_1	C:\Users\Gordan\Documents\_Projects\GameJams\SortItOut\SortItOut_WwiseProject\.cache\Mac\SFX\Sounds\Jump_sound_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Movement\Jump\Jump_sound_1		82380
+	362544429	footsteps_concrete_4	C:\Users\Gordan\Documents\_Projects\GameJams\SortItOut\SortItOut_WwiseProject\.cache\Mac\SFX\Sounds\footsteps_concrete_4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Movement\Footsteps\FS_Left\footsteps_concrete_4		74908
+	499620606	footsteps_concrete_2	C:\Users\Gordan\Documents\_Projects\GameJams\SortItOut\SortItOut_WwiseProject\.cache\Mac\SFX\Sounds\footsteps_concrete_2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Movement\Footsteps\FS_Right\footsteps_concrete_2		62308
+	611167646	footsteps_concrete_6	C:\Users\Gordan\Documents\_Projects\GameJams\SortItOut\SortItOut_WwiseProject\.cache\Mac\SFX\Sounds\footsteps_concrete_6_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Movement\Footsteps\FS_Left\footsteps_concrete_6		69396
+	661018292	jump_sound_2	C:\Users\Gordan\Documents\_Projects\GameJams\SortItOut\SortItOut_WwiseProject\.cache\Mac\SFX\Sounds\jump_sound_2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Movement\Jump\jump_sound_2		64380
+	937983605	footsteps_concrete_5	C:\Users\Gordan\Documents\_Projects\GameJams\SortItOut\SortItOut_WwiseProject\.cache\Mac\SFX\Sounds\footsteps_concrete_5_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sounds\Movement\Footsteps\FS_Left\footsteps_concrete_5		71756
+

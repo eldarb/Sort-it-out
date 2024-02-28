@@ -36,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         playerManager = GetComponent<PlayerManager>();
+       // m_AudioSource = GetComponent<AudioSource>();
+        //m_AudioSource.clip = m_FootStepsSFX;
         isAudioOn = false;
     }
 
@@ -75,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if(!isAudioOn)
             {
-                m_AudioSource.Play();
+               // m_AudioSource.Play();
                 isAudioOn = true;
             }
         }
@@ -84,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if(isAudioOn)
             {
-                m_AudioSource.Stop();
+               // m_AudioSource.Stop();
                 isAudioOn = false;
             }
         }

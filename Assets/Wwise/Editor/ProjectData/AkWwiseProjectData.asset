@@ -138,8 +138,8 @@ MonoBehaviour:
         guid: edaf0928729ef049b6985bb97d729a20
       Path: Events\Default Work Unit\Footstep
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.4241043
+      minDuration: 0.32142857
     - name: Item_Deposit
       guid: bbfd5a2b52f92b4aba6a8234434322a7
       id: 1777413591
@@ -155,8 +155,8 @@ MonoBehaviour:
         guid: bbfd5a2b52f92b4aba6a8234434322a7
       Path: Events\Default Work Unit\Item_Deposit
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: Item_Pickup
       guid: 43e05cbaae334e46bb97e7cd934cb12f
       id: 566396871
@@ -172,8 +172,8 @@ MonoBehaviour:
         guid: 43e05cbaae334e46bb97e7cd934cb12f
       Path: Events\Default Work Unit\Item_Pickup
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: Jump
       guid: d57940390df1584ab68bde4c3026bbe5
       id: 3833651337
@@ -189,8 +189,8 @@ MonoBehaviour:
         guid: d57940390df1584ab68bde4c3026bbe5
       Path: Events\Default Work Unit\Jump
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.4285625
+      minDuration: 0.3348125
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
