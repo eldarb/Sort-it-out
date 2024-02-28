@@ -9,10 +9,12 @@ public class PickUpDropThrow : MonoBehaviour
     [SerializeField] private LayerMask mask;
     [SerializeField] private float throwForce = 10;
     PlayerInventory inventory;
+    PowerGauge powerGauge;
     void Start()
     {
         cam = Camera.main.gameObject;
         inventory = GetComponent<PlayerInventory>();
+        powerGauge = GetComponentInChildren<PowerGauge>();
     }
 
     // void OnEnable()
@@ -63,7 +65,15 @@ public class PickUpDropThrow : MonoBehaviour
             if (rb != null)
             {
                 rb.isKinematic = false;
-                rb.AddForce(cam.transform.forward * throwForce, ForceMode.Impulse);
+                if(powerGauge != null)
+                {
+                    rb.AddForce(cam.transform.forward * throwForce * rb.mass * powerGauge.slider.value, ForceMode.Impulse);
+                }
+                else
+                {
+                    rb.AddForce(cam.transform.forward * throwForce * rb.mass, ForceMode.Impulse);
+                }
+                
                 Debug.Log("Object Thrown");
             }
         }

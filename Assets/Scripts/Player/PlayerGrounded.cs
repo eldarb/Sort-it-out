@@ -28,6 +28,8 @@ public class PlayerGrounded : MonoBehaviour
     /// </summary>
     private AudioSource m_AudioSource;
 
+    private bool playedSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,7 @@ public class PlayerGrounded : MonoBehaviour
         jumpTimeoutDelta = jumpTimeout;
         fallTimeoutDelta = fallTimeout;
         m_AudioSource = GetComponent<AudioSource>();
+        playedSound = false;
     }
     public void GroundedCheck()
     {
@@ -51,7 +54,13 @@ public class PlayerGrounded : MonoBehaviour
             if (playerManager.playerInputManager.isJumping && jumpTimeoutDelta <= 0.0f)
             {
                 yVelocity = Mathf.Sqrt(jumpHeight * -2f * gravityForce);
-                m_AudioSource.PlayOneShot(m_JumpingSFX);
+                if(!playedSound)
+                {
+                    m_AudioSource.PlayOneShot(m_JumpingSFX);
+                    playedSound = true;
+                    Debug.Log("Jump");
+                }
+                
             }
 
             if (jumpTimeoutDelta >= 0.0f)
@@ -69,6 +78,7 @@ public class PlayerGrounded : MonoBehaviour
             }
 
             playerManager.playerInputManager.SetJump(false);
+            playedSound = false;
         }
 
         if (yVelocity < terminalVelocity)
