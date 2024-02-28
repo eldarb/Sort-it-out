@@ -10,6 +10,12 @@ public class PickUpDropThrow : MonoBehaviour
     [SerializeField] private float throwForce = 10;
     PlayerInventory inventory;
     PowerGauge powerGauge;
+
+    public float recoilPower { private set; get; }
+    public bool recoiling {private set; get;}
+    public float recoilStartTime { private set; get; }
+    [SerializeField] float recoilThreshold = 0.4f;
+    [SerializeField] float recoilStrength = 10;
     void Start()
     {
         cam = Camera.main.gameObject;
@@ -68,6 +74,9 @@ public class PickUpDropThrow : MonoBehaviour
                 if(powerGauge != null)
                 {
                     rb.AddForce(cam.transform.forward * throwForce * rb.mass * powerGauge.slider.value, ForceMode.Impulse);
+                    recoiling = true;
+                    recoilPower = powerGauge.slider.value;
+                    recoilStartTime = Time.time;
                 }
                 else
                 {
@@ -77,5 +86,17 @@ public class PickUpDropThrow : MonoBehaviour
                 Debug.Log("Object Thrown");
             }
         }
-    }
+    }        
+    public Vector3 recoil(Vector3 movement)
+        {
+            if(recoilPower < powerGauge.slider.maxValue * recoilThreshold) { return movement; }
+            Vector3 recoilDir = (-1 * transform.forward) * recoilPower * recoilStrength * Time.deltaTime;
+            if (Time.time - recoilStartTime > .2f) { recoiling = false; return movement; }
+            else
+            {
+                //Debug.Log("Recoiling");
+                return movement + recoilDir;
+            }
+
+        }
 }

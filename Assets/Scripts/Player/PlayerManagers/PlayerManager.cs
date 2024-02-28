@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
 
     public CharacterController characterController;
     public PowerGauge powerGauge;
+    public PickUpDropThrow pickUpDropThrow;
 
     public Vector3 movement;
 
@@ -31,6 +32,7 @@ public class PlayerManager : MonoBehaviour
         playerLadderMovement = GetComponent<PlayerLadderMovement>();
         characterController = GetComponent<CharacterController>();
         powerGauge = GetComponentInChildren<PowerGauge>();
+        pickUpDropThrow = GetComponent<PickUpDropThrow>();
     }
 
     // Update is called once per frame
@@ -39,6 +41,10 @@ public class PlayerManager : MonoBehaviour
         playerGrounded.GroundedCheck();
         playerMovement.Move();
         movement = playerLadderMovement.HandleLadderMovement(movement);
+        if(pickUpDropThrow.recoiling)
+        {
+            movement = pickUpDropThrow.recoil(movement);
+        }
         characterController.Move(movement);
         if (powerGauge != null) {
             powerGauge.AdjustPower();
