@@ -40,7 +40,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3989171651" Type="User" Language="SFX" Hash="{12B21658-0B61-F921-1ADA-00F8D2FDA45A}">
+		<SoundBank Id="3989171651" Type="User" Language="SFX" Hash="{1DAE1A1E-3DB7-4714-0584-1993C435FD0E}">
 			<ShortName>Main_bank</ShortName>
 			<Path>Main_bank.bnk</Path>
 			<Media>
@@ -90,14 +90,22 @@
 				</Event>
 				<Event Id="1777413591" Name="Item_Deposit" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="566396871" Name="Item_Pickup" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="3833651337" Name="Jump" DurationType="OneShot" DurationMin="0.3348125" DurationMax="0.4285625">
+				<Event Id="3833651337" Name="Jump" DurationType="OneShot" DurationMin="0.3348125" DurationMax="0.43479607">
 					<MediaRefs>
 						<MediaRef Id="309514780"/>
 						<MediaRef Id="661018292"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2561306240" Name="Play_click_menu_sfx" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2732289751" Name="Play_Closemenu" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4227831406" Name="Play_conveyorbelt_sfx" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2481433679" Name="Play_gameplaymusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2570041344" Name="Play_menumusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2873973555" Name="Play_Openmenu" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2853390822" Name="Play_Warehouse_ambience" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3130396874" Name="Play_water_ambience" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{AD9FCF9A-86C6-D614-6B16-F756B9B69C42}</FileHash>
+	<FileHash>{8E9A620E-322F-6034-A5DC-93E2BE60541B}</FileHash>
 </SoundBanksInfo>

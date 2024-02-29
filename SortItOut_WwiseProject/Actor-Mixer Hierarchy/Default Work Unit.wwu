@@ -240,6 +240,33 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="Jump_sound_1" ID="{8ACBC25D-4857-4E02-8808-E70EC092DF48}" ShortID="327276746">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{E81C4537-EBA0-4507-B049-4584AAC6E49D}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="75"/>
+																	<Property Name="Min" Type="Real64" Value="-25"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{289ED75F-3437-41B6-9D00-DE1CC73E76B6}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Min" Type="Real64" Value="-6"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
@@ -1316,7 +1343,14 @@
 								</SwitchContainer>
 							</ChildrenList>
 						</ActorMixer>
-						<ActorMixer Name="Throw" ID="{0856DF49-F2A7-425E-BD8A-3E89FB5AE93D}" ShortID="367496319">
+						<ActorMixer Name="Gun" ID="{0856DF49-F2A7-425E-BD8A-3E89FB5AE93D}" ShortID="367496319">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
@@ -1326,7 +1360,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_2" ID="{54858093-F8B4-436D-BB3C-AC2B23C99716}" ShortID="33578026">
+								<RandomSequenceContainer Name="Shoot_Trash" ID="{BAFE1881-BDE8-4233-97CC-AA7568D7DF47}" ShortID="524718008">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
@@ -1336,19 +1370,119 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_2" ID="{006C74B3-524F-413C-9BF6-D3141C741A66}">
-											<Language>SFX</Language>
-											<AudioFile>Sounds\SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_2.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="447661648"/>
-											</MediaIDList>
-										</AudioFileSource>
+										<Sound Name="SFX_Shoot Trash_1" ID="{FE6428D9-D429-4AB9-8704-887710586B87}" ShortID="326832338">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Shoot Trash_1" ID="{7BE6A90D-A148-47FE-A031-18CF458BE79C}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Shoot Trash_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="990120146"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Shoot Trash_1" ID="{7BE6A90D-A148-47FE-A031-18CF458BE79C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Shoot Trash_2" ID="{C678FE21-1FE0-4D8C-9EB9-5124A675B073}" ShortID="324023790">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Shoot Trash_2" ID="{243A6ED9-D466-4E69-A990-CA58F6EF9678}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Shoot Trash_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="802361438"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Shoot Trash_2" ID="{243A6ED9-D466-4E69-A990-CA58F6EF9678}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Shoot Trash_3" ID="{0A05D97E-0E7D-4ED8-AAE4-17C320C5620F}" ShortID="417011614">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Shoot Trash_3" ID="{5D65ECCF-195B-4BC1-A458-609161A4BDE6}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Shoot Trash_3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="960585286"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Shoot Trash_3" ID="{5D65ECCF-195B-4BC1-A458-609161A4BDE6}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Suck Trash_1" ID="{BA2EBF0E-DCCB-4932-A1BE-DEE7D8E28AB4}" ShortID="396235304">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Suck Trash_1" ID="{D044DEB3-D7D6-4C96-AD26-8E66F5A2EC90}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Suck Trash_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="962214777"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Suck Trash_1" ID="{D044DEB3-D7D6-4C96-AD26-8E66F5A2EC90}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Suck Trash_2" ID="{ADAC2FD2-56F3-47B5-866A-739F530A1C21}" ShortID="290641847">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Suck Trash_2" ID="{758D01D3-2EF6-4E27-954F-BD2AB40C5A03}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Suck Trash_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1069261433"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Suck Trash_2" ID="{758D01D3-2EF6-4E27-954F-BD2AB40C5A03}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_2" ID="{006C74B3-524F-413C-9BF6-D3141C741A66}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_3" ID="{6551AD12-05F4-4D04-85A9-88D867ACB671}" ShortID="962505988">
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Suck Trash" ID="{B940AA11-B6EC-4E07-ADCF-967E13E8DF7C}" ShortID="503899890">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
@@ -1357,129 +1491,7 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
 										</Reference>
 									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_3" ID="{0F47534A-B646-4ABE-A088-242F78ED2493}">
-											<Language>SFX</Language>
-											<AudioFile>Sounds\SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_3.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="307528027"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_3" ID="{0F47534A-B646-4ABE-A088-242F78ED2493}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_4" ID="{4845BCBC-C870-41D2-87CB-7ACE6022C8C4}" ShortID="861251590">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_4" ID="{157C1166-EAB1-42F6-9CB4-BCD3109909B2}">
-											<Language>SFX</Language>
-											<AudioFile>Sounds\SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_4.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="503981692"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_4" ID="{157C1166-EAB1-42F6-9CB4-BCD3109909B2}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_5" ID="{E4F3FA7B-677F-41EA-9537-B40960D4A149}" ShortID="612085613">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_5" ID="{AD3C2652-7EA1-4E0C-BD2D-F5A86BB0D58C}">
-											<Language>SFX</Language>
-											<AudioFile>Sounds\SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_5.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="898685035"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_5" ID="{AD3C2652-7EA1-4E0C-BD2D-F5A86BB0D58C}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_1" ID="{825F37C1-AD4E-43BB-A145-1F3B750FFA9B}" ShortID="374045710">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_1" ID="{78BEBF7A-9F7C-462F-BDD5-FAB9CB602A23}">
-											<Language>SFX</Language>
-											<AudioFile>Sounds\SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_1.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="879634818"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_1" ID="{78BEBF7A-9F7C-462F-BDD5-FAB9CB602A23}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_7" ID="{0F3520F8-0DE7-4B1B-9F07-45D86B680549}" ShortID="783928766">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_7" ID="{C60A8C72-100E-4C01-BEB9-CFF23E3E2D30}">
-											<Language>SFX</Language>
-											<AudioFile>Sounds\SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_7.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="188960291"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_7" ID="{C60A8C72-100E-4C01-BEB9-CFF23E3E2D30}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_6" ID="{6BBD24BC-3FF8-4F9E-B653-B1B7866830C2}" ShortID="94895912">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0C620811-5BEF-4266-A027-68ABB05F5BB8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{609DB4FE-E459-4E07-9EDC-4941581AC551}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_6" ID="{0B243C61-966E-49C4-A39C-3D4311FD0062}">
-											<Language>SFX</Language>
-											<AudioFile>Sounds\SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_6.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="354260795"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="SORT_IT_OUT_AUDIO_FX_BIN_IMPACTS_THROW_WHOOSH_6" ID="{0B243C61-966E-49C4-A39C-3D4311FD0062}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
+								</RandomSequenceContainer>
 							</ChildrenList>
 						</ActorMixer>
 					</ChildrenList>
