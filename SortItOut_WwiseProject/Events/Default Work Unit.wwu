@@ -3,62 +3,30 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{B912E440-B8EE-4DE2-9428-F2C9E2D2530F}" PersistMode="Standalone">
 			<ChildrenList>
-				<Folder Name="Player" ID="{BE2135F8-611E-4771-8F2D-CBF014988945}" ShortID="401342520">
-					<PropertyList>
-						<Property Name="Color" Type="int16" Value="1"/>
-						<Property Name="OverrideColor" Type="bool" Value="True"/>
-					</PropertyList>
+				<Event Name="Footstep" ID="{2809AFED-9E72-49F0-B698-5BB97D729A20}">
 					<ChildrenList>
-						<Event Name="Item_Deposit" ID="{2B5AFDBB-F952-4A2B-BA6A-8234434322A7}"/>
-						<Event Name="Item_Pickup" ID="{BA5CE043-33AE-464E-BB97-E7CD934CB12F}"/>
-						<Event Name="Footstep" ID="{2809AFED-9E72-49F0-B698-5BB97D729A20}">
-							<ChildrenList>
-								<Action Name="" ID="{6E9BCD80-229D-4E48-A4B0-2A6A6764D36D}" ShortID="871435649">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Footsteps" ID="{CA3EDD03-4EBC-4A6A-966F-362671006588}" WorkUnitID="{64C52849-4C51-4B4E-91CA-2C375A915BF8}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Jump" ID="{394079D5-F10D-4A58-B68B-DE4C3026BBE5}">
-							<ChildrenList>
-								<Action Name="" ID="{9D621BBC-623C-47B9-8E9E-726F36F8335F}" ShortID="201741162">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Jump" ID="{F3AE548D-334D-44F6-95B7-4E84E99DC9F0}" WorkUnitID="{64C52849-4C51-4B4E-91CA-2C375A915BF8}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
+						<Action Name="" ID="{6E9BCD80-229D-4E48-A4B0-2A6A6764D36D}" ShortID="871435649">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{CA3EDD03-4EBC-4A6A-966F-362671006588}" WorkUnitID="{64C52849-4C51-4B4E-91CA-2C375A915BF8}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
-				</Folder>
-				<Folder Name="Enviorment" ID="{01F1FE31-0E6F-4548-89EA-DEAA36220F91}" ShortID="324564282">
-					<PropertyList>
-						<Property Name="Color" Type="int16" Value="19"/>
-						<Property Name="OverrideColor" Type="bool" Value="True"/>
-					</PropertyList>
+				</Event>
+				<Event Name="Jump" ID="{394079D5-F10D-4A58-B68B-DE4C3026BBE5}">
 					<ChildrenList>
-						<Event Name="Play_water_ambience" ID="{734673C6-3FD4-4358-8972-619A4E056BC6}"/>
-						<Event Name="Play_Warehouse_ambience" ID="{5AED52A9-C5DE-42F0-8D1D-BEA71D777D52}"/>
-						<Event Name="Play_conveyorbelt_sfx" ID="{88D27B76-03FA-459D-BD94-34C025E1CBBF}"/>
+						<Action Name="" ID="{9D621BBC-623C-47B9-8E9E-726F36F8335F}" ShortID="201741162">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Jump" ID="{F3AE548D-334D-44F6-95B7-4E84E99DC9F0}" WorkUnitID="{64C52849-4C51-4B4E-91CA-2C375A915BF8}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
-				</Folder>
-				<Folder Name="Music" ID="{6E39717C-FF67-414E-89F5-4998F7AD6BE0}" ShortID="86604897">
-					<ChildrenList>
-						<Event Name="Play_menumusic" ID="{CBB1F5C2-F4B8-4906-B3EE-80070ACB64AB}"/>
-						<Event Name="Play_gameplaymusic" ID="{A29E606D-EF16-4DBD-B471-0E98AB6F415D}"/>
-					</ChildrenList>
-				</Folder>
-				<Folder Name="UI" ID="{A81985F1-A935-4B3F-B8C6-08E196E84A29}" ShortID="903516434">
-					<ChildrenList>
-						<Event Name="Play_Openmenu" ID="{74216B5B-166B-4FF9-851D-67EF0B0E26B2}"/>
-						<Event Name="Play_Closemenu" ID="{202C58E0-4174-492A-8526-EEBAFCFD49FB}"/>
-						<Event Name="Play_click_menu_sfx" ID="{B18A0B30-397B-4BB6-8754-6E18AEEACD0D}"/>
-					</ChildrenList>
-				</Folder>
+				</Event>
+				<Event Name="Item_Deposit" ID="{2B5AFDBB-F952-4A2B-BA6A-8234434322A7}"/>
+				<Event Name="Item_Pickup" ID="{BA5CE043-33AE-464E-BB97-E7CD934CB12F}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
