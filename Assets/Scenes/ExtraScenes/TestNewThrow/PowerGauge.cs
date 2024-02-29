@@ -45,7 +45,7 @@ public class PowerGauge : MonoBehaviour
     public void AdjustPower()
     {
         float power = playerManager.playerInputManager.power;
-        Debug.Log("Power: " + power);
+        //Debug.Log("Power: " + power);
         if(power == 0) { return; }
         else if(power > 0 && slider.value < slider.maxValue)
         {
