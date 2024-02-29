@@ -16,17 +16,20 @@ public class PickUpDropThrow : MonoBehaviour
     public float recoilStartTime { private set; get; }
     [SerializeField] float recoilThreshold = 0.4f;
     [SerializeField] float recoilStrength = 10;
+    bool cheese = false;
     void Start()
     {
         cam = Camera.main.gameObject;
         inventory = GetComponent<PlayerInventory>();
         powerGauge = GetComponentInChildren<PowerGauge>();
+        if(cheese) { return; }
         GameEventsManager.Instance.playerEvents.onFire += OnThrow;
     }
 
     private void OnEnable()
     {
         if(GameEventsManager.Instance == null) { return; }
+        cheese = true;
         GameEventsManager.Instance.playerEvents.onFire += OnThrow;
     }
 
