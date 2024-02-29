@@ -41,7 +41,7 @@ public class PlayerManager : MonoBehaviour
         playerGrounded.GroundedCheck();
         playerMovement.Move();
         movement = playerLadderMovement.HandleLadderMovement(movement);
-        if(pickUpDropThrow.recoiling)
+        if (pickUpDropThrow.recoiling)
         {
             movement = pickUpDropThrow.recoil(movement);
         }

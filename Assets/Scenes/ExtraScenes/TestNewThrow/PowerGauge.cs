@@ -10,14 +10,12 @@ public class PowerGauge : MonoBehaviour
     float startTime;
     [SerializeField] float maxPower = 1; 
     [SerializeField] float fluctuationRate = .5f;
-    bool increasing;
     PlayerManager playerManager;
 
     void Start()
     {
         slider = GetComponent<Slider>();
         startTime = 0;
-        increasing = true;
         slider.maxValue = maxPower;
         playerManager = GetComponentInParent<PlayerManager>();
     }
@@ -46,12 +44,12 @@ public class PowerGauge : MonoBehaviour
     {
         float power = playerManager.playerInputManager.power;
         //Debug.Log("Power: " + power);
-        if(power == 0) { return; }
-        else if(power > 0 && slider.value < slider.maxValue)
+        //if(power == 0) { return; }
+        if(power == 1 && slider.value < slider.maxValue)
         {
             slider.value += 1f * fluctuationRate;
         }
-        else if(power < 0 && slider.value > 0)
+        else if(power == 0 && slider.value > 0)
         {
             slider.value -= 1f * fluctuationRate; 
         }

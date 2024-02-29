@@ -51,7 +51,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Throw",
+                    "name": "OldThrow",
                     "type": "Button",
                     "id": "802198c1-34c2-4b5e-bcf8-6bb5ea6eb343",
                     "expectedControlType": "Button",
@@ -70,12 +70,21 @@
                 },
                 {
                     "name": "AdjustPower",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "528f233b-bbfa-4f86-be0b-95d30b98a7d2",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Fire",
+                    "type": "Button",
+                    "id": "3e5fae51-5347-47f8-a156-5f8dcc9bcbad",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -174,7 +183,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Throw",
+                    "action": "OldThrow",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -203,11 +212,22 @@
                 {
                     "name": "",
                     "id": "c0210d80-0084-4e89-bcd5-5473e7073bd3",
-                    "path": "<Mouse>/scroll/y",
-                    "interactions": "",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Hold",
                     "processors": "",
                     "groups": "",
                     "action": "AdjustPower",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e422afbb-e25f-48e9-ae7d-1dcfd031359f",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

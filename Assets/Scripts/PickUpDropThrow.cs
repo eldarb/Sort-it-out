@@ -21,8 +21,19 @@ public class PickUpDropThrow : MonoBehaviour
         cam = Camera.main.gameObject;
         inventory = GetComponent<PlayerInventory>();
         powerGauge = GetComponentInChildren<PowerGauge>();
+        GameEventsManager.Instance.playerEvents.onFire += OnThrow;
     }
 
+    private void OnEnable()
+    {
+        if(GameEventsManager.Instance == null) { return; }
+        GameEventsManager.Instance.playerEvents.onFire += OnThrow;
+    }
+
+    private void OnDisable()
+    {
+        GameEventsManager.Instance.playerEvents.onFire += OnThrow;
+    }
     // void OnEnable()
     // {
     //     GameEventsManager.Instance.playerEvents.onPickUp += OnPickUp;
@@ -89,7 +100,7 @@ public class PickUpDropThrow : MonoBehaviour
     }        
     public Vector3 recoil(Vector3 movement)
         {
-            if(recoilPower < powerGauge.slider.maxValue * recoilThreshold) { return movement; }
+            if(recoilPower < powerGauge.slider.maxValue * recoilThreshold) { recoiling = false; return movement; }
             Vector3 recoilDir = (-1 * transform.forward) * recoilPower * recoilStrength * Time.deltaTime;
             if (Time.time - recoilStartTime > .2f) { recoiling = false; return movement; }
             else
