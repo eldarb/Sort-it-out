@@ -73,7 +73,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Throw"",
+                    ""name"": ""OldThrow"",
                     ""type"": ""Button"",
                     ""id"": ""802198c1-34c2-4b5e-bcf8-6bb5ea6eb343"",
                     ""expectedControlType"": ""Button"",
@@ -89,6 +89,24 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": ""InvertVector2(invertX=false)"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""AdjustPower"",
+                    ""type"": ""Button"",
+                    ""id"": ""528f233b-bbfa-4f86-be0b-95d30b98a7d2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""3e5fae51-5347-47f8-a156-5f8dcc9bcbad"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -187,7 +205,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Throw"",
+                    ""action"": ""OldThrow"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -210,6 +228,28 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""PickUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c0210d80-0084-4e89-bcd5-5473e7073bd3"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AdjustPower"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e422afbb-e25f-48e9-ae7d-1dcfd031359f"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -273,8 +313,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_Gameplay_Sprint = m_Gameplay.FindAction("Sprint", throwIfNotFound: true);
         m_Gameplay_Crouch = m_Gameplay.FindAction("Crouch", throwIfNotFound: true);
         m_Gameplay_PickUp = m_Gameplay.FindAction("PickUp", throwIfNotFound: true);
-        m_Gameplay_Throw = m_Gameplay.FindAction("Throw", throwIfNotFound: true);
+        m_Gameplay_OldThrow = m_Gameplay.FindAction("OldThrow", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
+        m_Gameplay_AdjustPower = m_Gameplay.FindAction("AdjustPower", throwIfNotFound: true);
+        m_Gameplay_Fire = m_Gameplay.FindAction("Fire", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_ExitBackToMenu = m_UI.FindAction("ExitBackToMenu", throwIfNotFound: true);
@@ -345,8 +387,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Sprint;
     private readonly InputAction m_Gameplay_Crouch;
     private readonly InputAction m_Gameplay_PickUp;
-    private readonly InputAction m_Gameplay_Throw;
+    private readonly InputAction m_Gameplay_OldThrow;
     private readonly InputAction m_Gameplay_Look;
+    private readonly InputAction m_Gameplay_AdjustPower;
+    private readonly InputAction m_Gameplay_Fire;
     public struct GameplayActions
     {
         private @PlayerActions m_Wrapper;
@@ -356,8 +400,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         public InputAction @Sprint => m_Wrapper.m_Gameplay_Sprint;
         public InputAction @Crouch => m_Wrapper.m_Gameplay_Crouch;
         public InputAction @PickUp => m_Wrapper.m_Gameplay_PickUp;
-        public InputAction @Throw => m_Wrapper.m_Gameplay_Throw;
+        public InputAction @OldThrow => m_Wrapper.m_Gameplay_OldThrow;
         public InputAction @Look => m_Wrapper.m_Gameplay_Look;
+        public InputAction @AdjustPower => m_Wrapper.m_Gameplay_AdjustPower;
+        public InputAction @Fire => m_Wrapper.m_Gameplay_Fire;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -382,12 +428,18 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @PickUp.started += instance.OnPickUp;
             @PickUp.performed += instance.OnPickUp;
             @PickUp.canceled += instance.OnPickUp;
-            @Throw.started += instance.OnThrow;
-            @Throw.performed += instance.OnThrow;
-            @Throw.canceled += instance.OnThrow;
+            @OldThrow.started += instance.OnOldThrow;
+            @OldThrow.performed += instance.OnOldThrow;
+            @OldThrow.canceled += instance.OnOldThrow;
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
+            @AdjustPower.started += instance.OnAdjustPower;
+            @AdjustPower.performed += instance.OnAdjustPower;
+            @AdjustPower.canceled += instance.OnAdjustPower;
+            @Fire.started += instance.OnFire;
+            @Fire.performed += instance.OnFire;
+            @Fire.canceled += instance.OnFire;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -407,12 +459,18 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @PickUp.started -= instance.OnPickUp;
             @PickUp.performed -= instance.OnPickUp;
             @PickUp.canceled -= instance.OnPickUp;
-            @Throw.started -= instance.OnThrow;
-            @Throw.performed -= instance.OnThrow;
-            @Throw.canceled -= instance.OnThrow;
+            @OldThrow.started -= instance.OnOldThrow;
+            @OldThrow.performed -= instance.OnOldThrow;
+            @OldThrow.canceled -= instance.OnOldThrow;
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
+            @AdjustPower.started -= instance.OnAdjustPower;
+            @AdjustPower.performed -= instance.OnAdjustPower;
+            @AdjustPower.canceled -= instance.OnAdjustPower;
+            @Fire.started -= instance.OnFire;
+            @Fire.performed -= instance.OnFire;
+            @Fire.canceled -= instance.OnFire;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -491,8 +549,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         void OnSprint(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnPickUp(InputAction.CallbackContext context);
-        void OnThrow(InputAction.CallbackContext context);
+        void OnOldThrow(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+        void OnAdjustPower(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

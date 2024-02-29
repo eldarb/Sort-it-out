@@ -12,7 +12,9 @@ public class PlayerInputManager : MonoBehaviour
     public bool isCrouching { get; private set; }
     public bool isSprinting { get; private set; }
     public bool isHolding { get; private set; }
-    public bool isThrowing { get; private set; }
+    //public bool isThrowing { get; private set; }
+    public float power { get; private set; }
+    public bool fire { get; private set; }
 
     private void Start()
     {
@@ -69,19 +71,33 @@ public class PlayerInputManager : MonoBehaviour
             sprintAction.performed += OnSprintStart;
             sprintAction.canceled += OnSprintEnd;
         }
-        InputAction holdAction = input.actions.FindAction("PickUp");
-        if (holdAction != null)
+        //InputAction holdAction = input.actions.FindAction("PickUp");
+        //if (holdAction != null)
+        //{
+        //    holdAction.started += OnPickUpStart;
+        //    holdAction.performed += OnPickUpStart;
+        //    holdAction.canceled += OnPickUpEnd;
+        //}
+        //InputAction throwAction = input.actions.FindAction("Throw");
+        //if (throwAction != null)
+        //{
+        //    throwAction.started += OnThrowItemStart;
+        //    throwAction.performed += OnThrowItemStart;
+        //    throwAction.canceled += OnThrowItemEnd;
+        //}
+
+        InputAction adjustPowerAction = input.actions.FindAction("AdjustPower");
+        if (adjustPowerAction != null)
         {
-            holdAction.started += OnPickUpStart;
-            holdAction.performed += OnPickUpStart;
-            holdAction.canceled += OnPickUpEnd;
+            adjustPowerAction.started += OnAdjustPowerStart;
+            adjustPowerAction.performed += OnAdjustPowerStart;
+            adjustPowerAction.canceled += OnAdjustPowerEnd;
         }
-        InputAction throwAction = input.actions.FindAction("Throw");
-        if (throwAction != null)
+        InputAction fireAction = input.actions.FindAction("Fire");
+        if (fireAction != null)
         {
-            throwAction.started += OnThrowItemStart;
-            throwAction.performed += OnThrowItemStart;
-            throwAction.canceled += OnThrowItemEnd;
+            fireAction.started += OnFireStart;
+            fireAction.canceled += OnFireEnd;
         }
     }
     void UnRegisterHandle(PlayerInput input)
@@ -118,20 +134,34 @@ public class PlayerInputManager : MonoBehaviour
             sprintAction.performed -= OnSprintStart;
             sprintAction.canceled -= OnSprintEnd;
         }
-        InputAction holdAction = input.actions.FindAction("PickUp");
-        if (holdAction != null)
-        {
-            holdAction.started -= OnPickUpStart;
-            holdAction.performed -= OnPickUpStart;
-            holdAction.canceled -= OnPickUpEnd;
+        //InputAction holdAction = input.actions.FindAction("PickUp");
+        //if (holdAction != null)
+        //{
+        //    holdAction.started -= OnPickUpStart;
+        //    holdAction.performed -= OnPickUpStart;
+        //    holdAction.canceled -= OnPickUpEnd;
 
-        }
-        InputAction throwAction = input.actions.FindAction("Throw");
-        if (throwAction != null)
+        //}
+        //InputAction throwAction = input.actions.FindAction("Throw");
+        //if (throwAction != null)
+        //{
+        //    throwAction.started -= OnThrowItemStart;
+        //    throwAction.performed -= OnThrowItemStart;
+        //    throwAction.canceled -= OnThrowItemEnd;
+        //}
+
+        InputAction adjustPowerAction = input.actions.FindAction("AdjustPower");
+        if (adjustPowerAction != null)
         {
-            throwAction.started -= OnThrowItemStart;
-            throwAction.performed -= OnThrowItemStart;
-            throwAction.canceled -= OnThrowItemEnd;
+            adjustPowerAction.started -= OnAdjustPowerStart;
+            adjustPowerAction.performed -= OnAdjustPowerStart;
+            adjustPowerAction.canceled -= OnAdjustPowerEnd;
+        }
+        InputAction fireAction = input.actions.FindAction("Fire");
+        if (fireAction != null)
+        {
+            fireAction.started -= OnFireStart;
+            fireAction.canceled -= OnFireEnd;
         }
     }
     void OnMoveStart(InputAction.CallbackContext context)
@@ -172,25 +202,46 @@ public class PlayerInputManager : MonoBehaviour
         SetCrouch(context.ReadValueAsButton());
         GameEventsManager.Instance.playerEvents.CrouchEnd();
     }
-    void OnPickUpStart(InputAction.CallbackContext context)
+    //void OnPickUpStart(InputAction.CallbackContext context)
+    //{
+    //    SetHold(context.ReadValueAsButton());
+    //    GameEventsManager.Instance.playerEvents.PickUp();
+    //}
+    //void OnPickUpEnd(InputAction.CallbackContext context)
+    //{
+    //    SetHold(context.ReadValueAsButton());
+    //    GameEventsManager.Instance.playerEvents.PickUp();
+    //}
+    //void OnThrowItemStart(InputAction.CallbackContext context)
+    //{
+    //    SetThrow(context.ReadValueAsButton());
+        
+    //}
+    //void OnThrowItemEnd(InputAction.CallbackContext context)
+    //{
+    //    SetThrow(context.ReadValueAsButton());
+    //    GameEventsManager.Instance.playerEvents.Throw();
+    //}
+    void OnAdjustPowerStart(InputAction.CallbackContext context)
     {
-        SetHold(context.ReadValueAsButton());
-        GameEventsManager.Instance.playerEvents.PickUp();
+        SetPower(context.ReadValue<float>());
     }
-    void OnPickUpEnd(InputAction.CallbackContext context)
+
+    void OnAdjustPowerEnd(InputAction.CallbackContext context)
     {
-        SetHold(context.ReadValueAsButton());
-        GameEventsManager.Instance.playerEvents.PickUp();
+        SetPower(0);
     }
-    void OnThrowItemStart(InputAction.CallbackContext context)
+    void OnFireStart(InputAction.CallbackContext context)
     {
-        SetThrow(context.ReadValueAsButton());
-        GameEventsManager.Instance.playerEvents.Throw();
+        SetFire(context.ReadValueAsButton());
     }
-    void OnThrowItemEnd(InputAction.CallbackContext context)
+    void OnFireEnd(InputAction.CallbackContext context)
     {
-        SetThrow(context.ReadValueAsButton());
+        SetFire(context.ReadValueAsButton());
+        GameEventsManager.Instance.playerEvents.Fire();
+        Debug.Log("fire:" + fire);
     }
+
     void SetMove(Vector2 value)
     {
         move = value;
@@ -211,12 +262,23 @@ public class PlayerInputManager : MonoBehaviour
     {
         isSprinting = value;
     }
-    void SetHold(bool value)
+    //void SetHold(bool value)
+    //{
+    //    isHolding = value;
+    //}
+    //void SetThrow(bool value)
+    //{
+    //    isThrowing = !value;
+    //}
+
+    void SetPower(float value)
     {
-        isHolding = value;
+        power = value;
     }
-    void SetThrow(bool value)
+
+    void SetFire(bool value)
     {
-        isThrowing = value;
+        fire = !value;
+
     }
 }

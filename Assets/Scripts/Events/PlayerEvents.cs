@@ -38,40 +38,49 @@ public class PlayerEvents
             onCrouchEnd();
         }
     }
-    public event Action onPickUp;
-    public void PickUp()
-    {
-        if (onPickUp != null)
-        {
-            onPickUp();
-        }
-    }
 
-    public event Action onThrow;
-    public void Throw()
+    public event Action onFire;
+    public void Fire()
     {
-        if (onThrow != null)
+        if (onFire != null)
         {
-            onThrow();
+            onFire();
         }
     }
+    //public event Action onPickUp;
+    //public void PickUp()
+    //{
+    //    if (onPickUp != null)
+    //    {
+    //        onPickUp();
+    //    }
+    //}
 
-    public event Action<GameObject> onCollect;
-    public void Collect(GameObject obj)
-    {
-        if (onCollect != null)
-        {
-            onCollect(obj);
-        }
-    }
-    
-    public event Func<GameObject> onRelease;
-    public GameObject Release()
-    {
-        if (onRelease != null)
-        {
-            return onRelease();
-        }
-        return null;
-    }
+    //public event Action onThrow;
+    //public void Throw()
+    //{
+    //    if (onThrow != null)
+    //    {
+    //        onThrow();
+    //    }
+    //}
+
+    //public event Action<GameObject> onCollect;
+    //public void Collect(GameObject obj)
+    //{
+    //    if (onCollect != null)
+    //    {
+    //        onCollect(obj);
+    //    }
+    //}
+
+    //public event Func<GameObject> onRelease;
+    //public GameObject Release()
+    //{
+    //    if (onRelease != null)
+    //    {
+    //        return onRelease();
+    //    }
+    //    return null;
+    //}
 }
