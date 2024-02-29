@@ -473,7 +473,7 @@ MonoBehaviour:
   overrideLoadSetting: 1
   loadAsynchronous: 0
   saveDecodedBank: 0
-  unloadTriggerList: 
+  unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
 --- !u!4 &480834867
