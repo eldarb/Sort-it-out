@@ -29,6 +29,8 @@ public class BinScript : MonoBehaviour
     /// </summary>
     private ScoreManager scoreManager;
 
+    private GameObject m_Recyclables;
+
     /// <summary>
     /// Start is called before the first frame update.
     /// Sets m_Collider and m_AudioSource.
@@ -38,6 +40,7 @@ public class BinScript : MonoBehaviour
         m_Collider = GetComponent<BoxCollider>();
         m_AudioSource = GetComponent<AudioSource>();
         scoreManager = FindObjectOfType<ScoreManager>();
+        m_Recyclables = GameObject.Find("Recyclables");
     }
 
     /// <summary>
@@ -58,6 +61,7 @@ public class BinScript : MonoBehaviour
             m_AudioSource.PlayOneShot(m_SuccessSound);
             //Point increment
             if(scoreManager != null) { scoreManager.scoreIncrement(); }
+            m_Recyclables.GetComponent<ItemCounter>().addItem(1);
             
         }
         // Prevents the fail sound to play due to binHole collision with Bins.
