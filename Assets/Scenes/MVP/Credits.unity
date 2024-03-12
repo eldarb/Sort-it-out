@@ -410,7 +410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -6420}
+  m_AnchoredPosition: {x: 0, y: -17969}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &883990138
@@ -623,7 +623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -629}
+  m_AnchoredPosition: {x: 0, y: -450}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1206400771
@@ -646,59 +646,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'CREDITS
-
-
-
-
-    Game Design
-
-
-
-    Eric Siddiqui
-
-
-    Heath
-
-
-    Justin
-    Chen
-
-
-    Maila Scott
-
-
-
-
-    Sound/Music
-
-
-
-    Jeff Boy R D
-
-
-    Sty1e
-
-
-
-
-    Programmers
-
-
-
-    KD
-
-
-    L
-
-
-    Lfraize
-
-
-    Rakshaan
-
-
-    Takumi_Panda'
+  m_text: "CREDITS\n\n\n\nGame Designers\n\n\nEric Sahil Siddiqui\n\nHeath Osborn\n\nJustin
+    Chen\n\nMalia Scott\n\n\n\nLevel Designer\n\n\nDanieyll Wilson\n\nEric Sahil
+    Siddiqui\n\nHeath Osborn\n\n\n\nVideo Production\n\n\nEric Sahil Siddiqui\n\n\n\nProgrammers\n\n\nDanieyll
+    Wilson - Bin/Items Mechanics\n\nDanieyll Wilson - Credits/Music/SFX\n\nKenneth
+    Deng - Main Menu\n\nKenneth Deng - Ladder/Movement Mechanics\n\nKenneth Deng
+    - Point System\n\nEldar \u201CL\u201D Bertel - Movement/Lift Mechanics\n\nLucas
+    Fraize - Inventory Mechanics\n\nLucas Fraize - Pickup/Throw Mechanics\n\nRakshaan
+    Khan - Movement Mechanics\n\nRakshaan Khan - Pause Mechanics\n\n\n\nArt\n\n\nDanieyll
+    Wilson - Prototype\n\nDanieyll Wilson - Instructions\n\nJustin Chen - 3D Environment\n\nJustin
+    Chen - 3D Items\n\nMaila Scott - 3D Environment\n\nMaila Scott - 3D Bin\n\nMalia
+    Scott - 3D Items\n\nOriana Evans - 3D Environment\n\nUnity - Unity Starter Assets\n\n\n\nMusic\n\n\nJeff
+    McCollister - Main Menu\n\nJeff McCollister - Credits\n\n\u201CSty1e\u201D -
+    GamePlay\n\n\u201CSty1e\u201D - Trailer\n\n\n\nSound/SFX\n\n\nGordon Smith\n\nJeff
+    McCollister - Bin SFX\n\nJeff McCollister - Items SFX\n\nJeff McCollister - River
+    SFX\n\nJeff McCollister - Throw SFX\n\n\u201CSty1e\u201D - Items Pickup SFX\n\n\u201CSty1e\u201D
+    - Movement/Jump SFX\n\n\u201CSty1e\u201D - Vacuum SFX"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f9c6d935038f565c28bef6f59100979a, type: 2}
   m_sharedMaterial: {fileID: -8160569446081608429, guid: f9c6d935038f565c28bef6f59100979a, type: 2}
@@ -761,7 +724,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -354.8448, y: 0, z: -349.28503, w: -5603.465}
+  m_margin: {x: -823.87524, y: 0, z: -837.24963, w: -5603.465}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -983,7 +946,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1105, y: -592}
+  m_AnchoredPosition: {x: 392, y: -300}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1710342783
@@ -1033,8 +996,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1110,7 +1073,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3ed47a4792678cb8e9c5463fb6e01504, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 47e7f1ca1f6a9294f9841c6808bf05a2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.213
   m_Pitch: 1

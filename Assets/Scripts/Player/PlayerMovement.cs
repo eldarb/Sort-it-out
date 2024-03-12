@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         currentSpeed = speed;        
-        Debug.Log(GameEventsManager.Instance == null);
+        //Debug.Log(GameEventsManager.Instance == null);
         GameEventsManager.Instance.playerEvents.onSprintStart += SetSpeedSprint;
         GameEventsManager.Instance.playerEvents.onCrouchStart += SetSpeedCrouch;
         GameEventsManager.Instance.playerEvents.onSprintEnd += SetSpeed;
@@ -70,11 +70,8 @@ public class PlayerMovement : MonoBehaviour
     public void Move()
     {
         //If the player moves and audio isn't playing, play the footsteps SFX.
-        if(Input.GetKey(KeyCode.W)
-        || Input.GetKey(KeyCode.A)
-        || Input.GetKey(KeyCode.S)
-        || Input.GetKey(KeyCode.D))
-        {
+        if(playerManager.playerInputManager.move != Vector2.zero && playerManager.playerGrounded.isGrounded) 
+        { 
             if(!isAudioOn)
             {
                 m_AudioSource.Play();

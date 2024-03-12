@@ -498,6 +498,8 @@ MonoBehaviour:
   playerGrounded: {fileID: 0}
   playerLadderMovement: {fileID: 0}
   characterController: {fileID: 0}
+  powerGauge: {fileID: 0}
+  pickUpDropThrow: {fileID: 0}
   movement: {x: 0, y: 0, z: 0}
 --- !u!114 &1018786689963768741
 MonoBehaviour:
@@ -574,13 +576,14 @@ MonoBehaviour:
   gravityForce: -15
   groundedRadius: 0.5
   groundedOffSet: 1.04
-  jumpHeight: 1
+  jumpHeight: 3
   isGrounded: 0
   groundedLayerMask:
     serializedVersion: 2
     m_Bits: 1
   jumpTimeout: 0.1
   fallTimeout: 0.15
+  m_JumpingSFX: {fileID: 0}
 --- !u!114 &9083061808056539559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,6 +601,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   throwForce: 10
+  recoilThreshold: 0.4
+  recoilStrength: 10
 --- !u!114 &1908406198623373829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,7 +628,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.109
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -916,12 +921,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: -8.939107, z: -42.796757, w: 2.6635966}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4729816101377437105}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!1 &8178486790148219796
 GameObject:
   m_ObjectHideFlags: 0

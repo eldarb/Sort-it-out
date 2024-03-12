@@ -24,7 +24,7 @@ public class CreditsScroll : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if(transform.position.y < 4000)
+        if(transform.position.y < 9435)
         {
             transform.Translate(Vector3.up * speed * Time.deltaTime);
         }

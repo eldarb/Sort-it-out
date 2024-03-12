@@ -65,24 +65,7 @@ public class PlayerLadderMovement : MonoBehaviour
         //Debug.Log(movement.x);
         if (climbingLadder)
         {
-            Debug.Log("playerInputManager.move:" + playerManager.playerInputManager.move);
-            // going down
-            if (playerManager.playerInputManager.move.y < 0)
-            {
-                movement.y = -1 * climbingLadderSpeed * Time.deltaTime;
-            }
-            //if (movement.x < 0 && playerManager.playerGrounded.GroundedCheck())
-            //{
-            //    movement.y = -1 * climbingLadderSpeed * Time.deltaTime;
-            //    movement.x = 0;
-            //}
-            // going up
-            else if (playerManager.playerInputManager.move.y > 0) 
-            {
-                movement.y = climbingLadderSpeed * Time.deltaTime; 
-            }
-            // staying still
-            else { movement.y = 0; }
+            movement.y = playerManager.playerInputManager.move.y * climbingLadderSpeed * Time.deltaTime;
         }
         return movement;
     }
