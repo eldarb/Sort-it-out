@@ -18,26 +18,6 @@ public class PlayerInventory : MonoBehaviour
         //Grabbing the TextMeshPro component from the ItemCountText GameObject
         m_TextMeshPro = GameObject.Find("ItemCountText").GetComponent<TextMeshPro>();
     }
-
-    //private void Start()
-    //{
-    //    GameEventsManager.Instance.playerEvents.onCollect += OnCollect;
-    //    GameEventsManager.Instance.playerEvents.onRelease += OnRelease;
-    //}
-
-    //void OnEnable()
-    //{
-    //    if(GameEventsManager.Instance == null) { return; }
-    //    GameEventsManager.Instance.playerEvents.onCollect += OnCollect;
-    //    GameEventsManager.Instance.playerEvents.onRelease += OnRelease;
-    //}
-
-    //void OnDisable()
-    //{
-    //    GameEventsManager.Instance.playerEvents.onCollect -= OnCollect;
-    //    GameEventsManager.Instance.playerEvents.onRelease -= OnRelease;
-    //}
-
     public void OnCollect(GameObject obj)
     {
         if (Inventory.Count < size)

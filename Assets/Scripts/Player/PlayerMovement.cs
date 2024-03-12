@@ -70,11 +70,8 @@ public class PlayerMovement : MonoBehaviour
     public void Move()
     {
         //If the player moves and audio isn't playing, play the footsteps SFX.
-        if(Input.GetKey(KeyCode.W)
-        || Input.GetKey(KeyCode.A)
-        || Input.GetKey(KeyCode.S)
-        || Input.GetKey(KeyCode.D))
-        {
+        if(playerManager.playerInputManager.move != Vector2.zero && playerManager.playerGrounded.isGrounded) 
+        { 
             if(!isAudioOn)
             {
                 m_AudioSource.Play();

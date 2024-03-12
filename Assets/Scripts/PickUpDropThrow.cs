@@ -37,18 +37,6 @@ public class PickUpDropThrow : MonoBehaviour
     {
         GameEventsManager.Instance.playerEvents.onFire += OnThrow;
     }
-    // void OnEnable()
-    // {
-    //     GameEventsManager.Instance.playerEvents.onPickUp += OnPickUp;
-    //     //GameEventsManager.Instance.playerEvents.onThrow += OnThrow;
-    // }
-
-    // void OnDisable()
-    // {
-    //     GameEventsManager.Instance.playerEvents.onPickUp -= OnPickUp;
-    //     //GameEventsManager.Instance.playerEvents.onThrow -= OnThrow;
-    // }
-
     public void OnPickUp()
     {
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
