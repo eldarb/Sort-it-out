@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MVP/MainMenu.unity
     guid: b638e770c56a9b5458024dfb1d78613b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MVP/MVP.unity
     guid: 1505be31e4c8a6ad4b0614913c534644
   - enabled: 0
     path: Assets/Scenes/MenuScenes/TesterBin.unity
     guid: 6c53475a1ae65baceace1615a7c3f3fc
+  - enabled: 1
+    path: Assets/Scenes/Heath/MVPHeath.unity
+    guid: c02aeb518925be7258fa44f113bba590
   - enabled: 1
     path: Assets/Scenes/MVP/Controls.unity
     guid: fcc23142ce0702449a7249edf8ef3b6f
