@@ -56,9 +56,9 @@ public class PauseMenu : MonoBehaviour
 
     public void ExitGame()
     {
-        Debug.Log("Exit button clicked - If this were a build, the application would quit.");
-       
-        Application.Quit();
+        // Debug.Log("Exit button clicked - If this were a build, the application would quit.");
+        SceneManager.LoadScene(4);
+        // Application.Quit();
     }
 }
 
